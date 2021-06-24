@@ -18,7 +18,7 @@ namespace myWay
     public partial class frmMain : Form
     {
         // vars
-        List<Sections> listSections = data.applicationData.listSections;
+        List<Sections> listSections = data.dataSections.GetSections();
         // WINDOW DRAG VAR
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -31,24 +31,9 @@ namespace myWay
         public frmMain()
         {
             InitializeComponent();
-            OnPaint(null);
-            
         }
-        // ROUNDED EDGES
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            Rectangle Rect = new Rectangle(0, 0, this.Width, this.Height);
-            GraphicsPath GraphPath = new GraphicsPath();
-            GraphPath.AddArc(Rect.X, Rect.Y, 25, 25, 180, 90);
-            GraphPath.AddArc(Rect.X + Rect.Width - 25, Rect.Y, 25, 25, 270, 90);
-            GraphPath.AddArc(Rect.X + Rect.Width - 25, Rect.Y + Rect.Height - 25, 25, 25, 0, 90);
-            GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - 25, 25, 25, 90, 90);
-            this.Region = new Region(GraphPath);
-        }
-        // END - ROUNDED EDGES
-        // Generate sections
-        public Panel setSectionsToPannel(Panel inputPanel, List<Sections> sectionsList)
+        // Generate - Refresh component in panels
+        public Panel setComponentToPanel(Panel inputPanel, List<Sections> sectionsList)
         {
             Panel outputPanel = inputPanel;
             outputPanel.Controls.Clear(); // clear actual shown sections
@@ -57,21 +42,17 @@ namespace myWay
             outputPanel.Controls.AddRange(aSections);
             return outputPanel; // return the new panel
         }
-        // END - Generate sections
-        // Check if section already exist
-        public Boolean sectionExists(Sections inputSection, List<Sections> listReference)
+        public void refreshPnlSectionContent()
         {
-            foreach(Sections mySection in listReference)
-            {
-                if (mySection.getValue() == inputSection.getValue()) return true; // return true if find similar section on reference list
-            }
-            return false;
+            setComponentToPanel(pnlSectionContent, dataSections.GetSections());
+            return;
         }
+        // END - Generate - Refresh component in panels
         // CONTROLS EVENTS
         private void btnClose_Click(object sender, EventArgs e)
         {
             // Close app
-            this.Close();
+            Application.Exit();
         }
         private void btnReduce_Click(object sender, EventArgs e)
         {
@@ -116,22 +97,18 @@ namespace myWay
         }
         private void btnIcon_Click(object sender, EventArgs e)
         {
-            if (pnlLeft.Visible) pnlLeft.Visible = false; // Open section menu
-            else pnlLeft.Visible = true;
-        }
-        private void lblSection_Click(object sender, EventArgs e)
-        {
-            // FOR DEBUG PURPOSE ONLY
-            Random rndGen = new Random();
-            Sections mySection = new Sections("item " + rndGen.Next(0,99)); // debug add section
-            if (sectionExists(mySection, listSections)) return; // cancel if section already exists
-            mySection.Dock = DockStyle.Top;
-            listSections.Add(mySection); // add section to the list
-            pnlSectionContent = setSectionsToPannel(pnlSectionContent, listSections); // show current sections
-        }
-        private void pnlSectionContent_ControlAdded(object sender, ControlEventArgs e)
-        {
-            pnlSectionContent.VerticalScroll.Visible = false;
+            if (pnlLeft.Visible)
+            {
+                pnlLeft.Visible = false; // Open section menu
+                btnOpenSection.IconChar = FontAwesome.Sharp.IconChar.Box; // Change icon
+                btnOpenSection.IconSize = 28;
+            }
+            else
+            {
+                pnlLeft.Visible = true; // Close section menu
+                btnOpenSection.IconChar = FontAwesome.Sharp.IconChar.BoxOpen; // Change icon
+                btnOpenSection.IconSize = 35;
+            }
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -142,12 +119,17 @@ namespace myWay
             {
                 if (mySection.getValue().Contains(searchFilter)) filteredSections.Add(mySection); // add results to filtered list
             }
-            pnlSectionContent = setSectionsToPannel(pnlSectionContent, filteredSections); // show filtered list
+            pnlSectionContent = setComponentToPanel(pnlSectionContent, filteredSections); // show filtered list
 
         }
         private void mtbxSectionSearch_TextChanged(object sender, EventArgs e)
         {
             btnSearch_Click(null, null);
+        }
+        private void btnAddSection_Click(object sender, EventArgs e)
+        {
+            myForms.frmAskTextInput askName = new myForms.frmAskTextInput("add");
+            askName.ShowDialog();
         }
         // END - CONTROLS EVENTS
     }

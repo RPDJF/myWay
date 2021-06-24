@@ -13,43 +13,70 @@ namespace myWay.myComponents
 {
     public partial class Sections : UserControl
     {
-        private String value;
-
-        public Sections()
+        // var
+        private String name;
+        public Sections(String name)
         {
             InitializeComponent();
-            this.value = "unnamed item";
-            btnBody.Text = value;
+            pnlToolbox.BackColor = btnBody.BackColor;
+            this.name = name;
+            refresh();
         }
-
-        public Sections(String value)
-        {
-            InitializeComponent();
-            this.value = value;
-            btnBody.Text = value;
-        }
-
+        // Getters
         public String getValue()
         {
-            return this.value;
+            return this.name;
         }
-
-        private void btnRemove_Click(object sender, EventArgs e)
+        // END - Getters
+        // Setters
+        public void setValue(String name)
         {
-            applicationData.listSections.Remove(this);
-            this.Parent = null;
-            this.DestroyHandle();
+            this.name = name;
+            refresh();
         }
-
-        public void ShowTools()
+        // END - Setters
+        // Refresh component
+        public void refresh()
         {
+            btnBody.Text = name;
+        }
+        // END - Refresh component
+        // Display toolbox
+        public void ShowTools(object sender, EventArgs e)
+        {
+            btnBody.BackColor = Color.MediumPurple;
+            btnEdit.BackColor = Color.MediumPurple;
+            btnRemove.BackColor = Color.MediumPurple;
             btnEdit.Visible = true;
             btnRemove.Visible = true;
         }
-        public void HideTools()
+        // END - Display toolbox
+        // Hide toolbox
+        public void HideTools(object sender, EventArgs e)
         {
+            btnBody.BackColor = Color.MediumSlateBlue;
+            btnEdit.BackColor = Color.MediumSlateBlue;
+            btnRemove.BackColor = Color.MediumSlateBlue;
             btnEdit.Visible = false;
             btnRemove.Visible = false;
         }
+        // END - Hide toolbox
+        // Control events
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            dataSections.removeSection(this);
+            this.Parent = null;
+            this.DestroyHandle();
+        }
+        private void Sections_Enter(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            myForms.frmAskTextInput askName = new myForms.frmAskTextInput("edit", this);
+            askName.ShowDialog();
+        }
+        // END - Control events
     }
 }

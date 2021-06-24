@@ -53,11 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="data\applicationData.cs" />
-    <Compile Include="myClass\frmMain.cs">
+    <Compile Include="data\dataSections.cs" />
+    <Compile Include="myForms\frmAskTextInput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="myClass\frmMain.Designer.cs">
+    <Compile Include="myForms\frmAskTextInput.Designer.cs">
+      <DependentUpon>frmAskTextInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="myComponents\Sections.cs">
@@ -68,7 +74,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="myClass\frmMain.resx">
+    <EmbeddedResource Include="myForms\frmAskTextInput.resx">
+      <DependentUpon>frmAskTextInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myComponents\Sections.resx">
@@ -99,10 +108,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\route-avec-ligne-brisee.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

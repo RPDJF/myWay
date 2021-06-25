@@ -92,7 +92,7 @@ namespace myWay.myComponents
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            myForms.frmAskTextInput askName = new myForms.frmAskTextInput("edit", this);
+            myForms.frmAskTextInput askName = new myForms.frmAskTextInput("edit", this, this.name);
             askName.ShowDialog();
         }
         // END - Control events

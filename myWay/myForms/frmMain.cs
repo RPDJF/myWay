@@ -129,8 +129,8 @@ namespace myWay
         private void btnAddSection_Click(object sender, EventArgs e)
         {
             myForms.frmAskTextInput askName = new myForms.frmAskTextInput("add");
+            askName.FormClosed += (s, ex) => {refreshPnlSectionContent();};
             askName.ShowDialog();
         }
-        // END - CONTROLS EVENTS
     }
 }

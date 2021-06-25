@@ -27,16 +27,18 @@ namespace myWay.myForms
         public static extern bool ReleaseCapture();
         // END - WINDOW DRAG VAR
         // inputs : add, edit
-        public frmAskTextInput(String inputType)
+        public frmAskTextInput(String inputType) : this(inputType, null)
         {
-            InitializeComponent();
-            this.inputType = inputType;
         }
-        public frmAskTextInput(String inputType, Sections inputSection)
+        public frmAskTextInput(String inputType, Sections inputSection) : this(inputType,  inputSection, null)
+        {
+        }
+        public frmAskTextInput(String inputType, Sections inputSection, String autoComplete)
         {
             InitializeComponent();
             this.inputType = inputType;
             this.inputSection = inputSection;
+            tbxInput.Text = autoComplete;
         }
         // Control events
         private void btnClose_Click(object sender, EventArgs e)

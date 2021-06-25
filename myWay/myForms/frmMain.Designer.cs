@@ -35,6 +35,8 @@ namespace myWay
             this.btnSize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pnlProperties = new System.Windows.Forms.Panel();
             this.pnlTopBar = new System.Windows.Forms.Panel();
             this.lblCollection = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
@@ -48,19 +50,17 @@ namespace myWay
             this.lblSection = new System.Windows.Forms.Label();
             this.pnlLeftBorder = new System.Windows.Forms.Panel();
             this.btnOpenSection = new FontAwesome.Sharp.IconButton();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pnlProperties = new System.Windows.Forms.Panel();
             this.pnlAppTopBar.SuspendLayout();
             this.pnlContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.pnlTopBar.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlSearchBar.SuspendLayout();
             this.pnlToolbar.SuspendLayout();
             this.pnlAppTitle.SuspendLayout();
             this.pnlLeftBorder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlAppTopBar
@@ -157,6 +157,28 @@ namespace myWay
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(488, 362);
             this.pnlContent.TabIndex = 7;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pnlProperties);
+            this.splitContainer1.Size = new System.Drawing.Size(488, 362);
+            this.splitContainer1.SplitterDistance = 298;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // pnlProperties
+            // 
+            this.pnlProperties.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.pnlProperties.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlProperties.Location = new System.Drawing.Point(0, 0);
+            this.pnlProperties.Name = "pnlProperties";
+            this.pnlProperties.Size = new System.Drawing.Size(186, 362);
+            this.pnlProperties.TabIndex = 7;
             // 
             // pnlTopBar
             // 
@@ -349,28 +371,6 @@ namespace myWay
             this.btnOpenSection.UseVisualStyleBackColor = false;
             this.btnOpenSection.Click += new System.EventHandler(this.btnIcon_Click);
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.pnlProperties);
-            this.splitContainer1.Size = new System.Drawing.Size(488, 362);
-            this.splitContainer1.SplitterDistance = 298;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // pnlProperties
-            // 
-            this.pnlProperties.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.pnlProperties.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProperties.Location = new System.Drawing.Point(0, 0);
-            this.pnlProperties.Name = "pnlProperties";
-            this.pnlProperties.Size = new System.Drawing.Size(186, 362);
-            this.pnlProperties.TabIndex = 7;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +388,9 @@ namespace myWay
             this.pnlAppTopBar.ResumeLayout(false);
             this.pnlAppTopBar.PerformLayout();
             this.pnlContent.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
             this.pnlLeft.ResumeLayout(false);
@@ -396,9 +399,6 @@ namespace myWay
             this.pnlAppTitle.ResumeLayout(false);
             this.pnlAppTitle.PerformLayout();
             this.pnlLeftBorder.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -414,7 +414,6 @@ namespace myWay
         private FontAwesome.Sharp.IconButton btnClose;
         private System.Windows.Forms.Label lblAppName;
         private System.Windows.Forms.Panel pnlAppTitle;
-        private System.Windows.Forms.Panel pnlSectionContent;
         private System.Windows.Forms.Panel pnlLeftBorder;
         private FontAwesome.Sharp.IconButton btnOpenSection;
         private System.Windows.Forms.Label lblSection;
@@ -426,6 +425,7 @@ namespace myWay
         private FontAwesome.Sharp.IconButton btnAddSection;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel pnlProperties;
+        public System.Windows.Forms.Panel pnlSectionContent;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using myWay.data;
+using myWay.myClass;
 
 namespace myWay.myComponents
 {
@@ -15,6 +16,9 @@ namespace myWay.myComponents
     {
         // var
         private String name;
+
+        // list raccourcis
+        private List<raccourcis> listRaccourcis = new List<raccourcis>();
         public Sections(String name)
         {
             InitializeComponent();
@@ -61,6 +65,20 @@ namespace myWay.myComponents
             btnRemove.Visible = false;
         }
         // END - Hide toolbox
+        // Add new shortcut
+        public void addShortcut(String name)
+        {
+            listRaccourcis.Add(new raccourcis(name));
+        }
+        public void addShortcut(String name, String description)
+        {
+            listRaccourcis.Add(new raccourcis(name, description));
+        }
+        public void addShortcut(String name, String description, Color color)
+        {
+            listRaccourcis.Add(new raccourcis(name, description, color));
+        }
+        // END - Add new shortcut
         // Control events
         private void btnRemove_Click(object sender, EventArgs e)
         {

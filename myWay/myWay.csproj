@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="data\dataSections.cs" />
+    <Compile Include="myClass\raccourcis.cs" />
     <Compile Include="myForms\frmAskTextInput.cs">
       <SubType>Form</SubType>
     </Compile>

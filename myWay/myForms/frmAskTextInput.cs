@@ -39,6 +39,7 @@ namespace myWay.myForms
             this.inputType = inputType;
             this.inputSection = inputSection;
             tbxInput.Text = autoComplete;
+            tbxInput.Select();
         }
         // Control events
         private void btnClose_Click(object sender, EventArgs e)
@@ -85,12 +86,12 @@ namespace myWay.myForms
                 switch (inputType)
                 {
                     case "add":
-                        data.dataSections.addSection(tbxInput.Text, DockStyle.Top);
-                        frmMain.refreshPnlContent();
+                        data.dataSections.addSection(tbxInput.Text);
+                        frmMain.refreshContents();
                         break;
 
                     case "edit":
-                        inputSection.setValue(tbxInput.Text);
+                        inputSection.setName(tbxInput.Text);
                         break;
                 }
                 

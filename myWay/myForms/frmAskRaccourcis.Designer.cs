@@ -40,12 +40,14 @@ namespace myWay.myForms
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblInputName = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.lblRequired = new System.Windows.Forms.Label();
             this.btnChooseFile = new MetroSet_UI.Controls.MetroSetButton();
             this.tbxInputDescription = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lblInputDescription = new System.Windows.Forms.Label();
             this.tbxInputChemin = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lblInputChemin = new System.Windows.Forms.Label();
-            this.lblRequired = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.pnlAppTopBar.SuspendLayout();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -231,6 +233,7 @@ namespace myWay.myForms
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.lblRequired);
             this.pnlContent.Controls.Add(this.btnChooseFile);
             this.pnlContent.Controls.Add(this.tbxInputDescription);
@@ -249,6 +252,17 @@ namespace myWay.myForms
             this.pnlContent.Size = new System.Drawing.Size(364, 239);
             this.pnlContent.TabIndex = 13;
             // 
+            // lblRequired
+            // 
+            this.lblRequired.AutoSize = true;
+            this.lblRequired.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblRequired.Location = new System.Drawing.Point(48, 59);
+            this.lblRequired.Name = "lblRequired";
+            this.lblRequired.Size = new System.Drawing.Size(17, 16);
+            this.lblRequired.TabIndex = 22;
+            this.lblRequired.Text = "*";
+            // 
             // btnChooseFile
             // 
             this.btnChooseFile.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -259,7 +273,7 @@ namespace myWay.myForms
             this.btnChooseFile.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnChooseFile.HoverTextColor = System.Drawing.Color.White;
             this.btnChooseFile.IsDerivedStyle = true;
-            this.btnChooseFile.Location = new System.Drawing.Point(104, 155);
+            this.btnChooseFile.Location = new System.Drawing.Point(109, 155);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnChooseFile.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -358,16 +372,20 @@ namespace myWay.myForms
             this.lblInputChemin.Text = "Chemin :";
             this.lblInputChemin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblRequired
+            // label1
             // 
-            this.lblRequired.AutoSize = true;
-            this.lblRequired.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblRequired.Location = new System.Drawing.Point(48, 59);
-            this.lblRequired.Name = "lblRequired";
-            this.lblRequired.Size = new System.Drawing.Size(17, 16);
-            this.lblRequired.TabIndex = 22;
-            this.lblRequired.Text = "*";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(69, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 16);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "*";
+            // 
+            // ofd
+            // 
+            this.ofd.FileName = "openFileDialog1";
             // 
             // frmAskRaccourcis
             // 
@@ -380,6 +398,7 @@ namespace myWay.myForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAskRaccourcis";
             this.Padding = new System.Windows.Forms.Padding(2);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAskRaccourcis";
             this.pnlAppTopBar.ResumeLayout(false);
             this.pnlAppTopBar.PerformLayout();
@@ -410,5 +429,7 @@ namespace myWay.myForms
         private System.Windows.Forms.Label lblInputDescription;
         private MetroSet_UI.Controls.MetroSetButton btnChooseFile;
         private System.Windows.Forms.Label lblRequired;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog ofd;
     }
 }

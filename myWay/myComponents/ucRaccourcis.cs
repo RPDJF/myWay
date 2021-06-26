@@ -78,6 +78,27 @@ namespace myWay.myComponents
         }
         private void btnBody_Click(object sender, EventArgs e)
         {
+            try
+            {
+                System.Diagnostics.Process.Start(this.contextRaccourcis.getPath());
+            }
+            catch(Exception ex)
+            {
+                // Get reference to the dialog type.
+                var dialogTypeName = "System.Windows.Forms.PropertyGridInternal.GridErrorDlg";
+                var dialogType = typeof(Form).Assembly.GetType(dialogTypeName);
+
+                // Create dialog instance.
+                var dialog = (Form)Activator.CreateInstance(dialogType, new PropertyGrid());
+
+                // Populate relevant properties on the dialog instance.
+                dialog.Text = "ERREUR";
+                dialogType.GetProperty("Details").SetValue(dialog, ex.ToString(), null);
+                dialogType.GetProperty("Message").SetValue(dialog, "Une erreur est survenue à l'ouverture du raccourci.\nVérifier que le chemin soit correct.", null);
+
+                // Display dialog.
+                var result = dialog.ShowDialog();
+            }
         }
         // END - Control events
     }

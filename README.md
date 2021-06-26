@@ -6,9 +6,7 @@ Ces ***séctions*** peuvent être ***exportés et réimportés*** d'un PC à l'a
 
 [ **Protection des données** ]
 L'application ne se connectera jamais sur internet, elle travaille sur des fichiers locaux.
-Ces mêmes fichiers, exception faite aux fichiers de configuration, sont cryptées par une API de Microsoft.
-Seul l'utilisateur et la machine réunis pourront décrypter les données.
-Il existe une option sur myWay qui permet d'exporter les séctions dans un fichier encrypté en base 64, facilement décryptable mais suffisant pour un export - import.
+Il est possible que dans les versions à venir l'application proposera une option de mises à jour automatiques, seule exception où l'application aura la possibilité d'accéder au réseau externe.
 
 [ **Raccourcis supportés** ]
 - Fichiers

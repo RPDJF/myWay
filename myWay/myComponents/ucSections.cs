@@ -16,6 +16,7 @@ namespace myWay.myComponents
     {
         // var
         private String name;
+        private Boolean isReady = false;
 
         // list raccourcis
         private List<raccourcis> listRaccourcis = new List<raccourcis>();
@@ -27,7 +28,7 @@ namespace myWay.myComponents
             refresh();
         }
         // Getters
-        public String getValue()
+        public String getName()
         {
             return this.name;
         }
@@ -35,12 +36,20 @@ namespace myWay.myComponents
         {
             return this.listRaccourcis;
         }
+        public Boolean getReady()
+        {
+            return isReady;
+        }
         // END - Getters
         // Setters
-        public void setValue(String name)
+        public void setName(String name)
         {
             this.name = name;
             refresh();
+        }
+        public void setReady(Boolean inputBool)
+        {
+            this.isReady = inputBool;
         }
         // END - Setters
         // Refresh component

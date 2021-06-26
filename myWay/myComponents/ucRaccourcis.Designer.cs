@@ -43,9 +43,9 @@ namespace myWay.myComponents
             this.pnlToolbox.Controls.Add(this.btnRemove);
             this.pnlToolbox.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlToolbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlToolbox.Location = new System.Drawing.Point(204, 1);
+            this.pnlToolbox.Location = new System.Drawing.Point(398, 1);
             this.pnlToolbox.Name = "pnlToolbox";
-            this.pnlToolbox.Size = new System.Drawing.Size(52, 28);
+            this.pnlToolbox.Size = new System.Drawing.Size(90, 51);
             this.pnlToolbox.TabIndex = 12;
             this.pnlToolbox.MouseEnter += new System.EventHandler(this.ShowTools);
             // 
@@ -60,11 +60,11 @@ namespace myWay.myComponents
             this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnEdit.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEdit.IconSize = 22;
+            this.btnEdit.IconSize = 26;
             this.btnEdit.Location = new System.Drawing.Point(0, 0);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Padding = new System.Windows.Forms.Padding(1, 3, 0, 0);
-            this.btnEdit.Size = new System.Drawing.Size(26, 28);
+            this.btnEdit.Size = new System.Drawing.Size(45, 51);
             this.btnEdit.TabIndex = 9;
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Visible = false;
@@ -82,11 +82,11 @@ namespace myWay.myComponents
             this.btnRemove.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnRemove.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnRemove.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRemove.IconSize = 20;
-            this.btnRemove.Location = new System.Drawing.Point(26, 0);
+            this.btnRemove.IconSize = 24;
+            this.btnRemove.Location = new System.Drawing.Point(45, 0);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.btnRemove.Size = new System.Drawing.Size(26, 28);
+            this.btnRemove.Size = new System.Drawing.Size(45, 51);
             this.btnRemove.TabIndex = 8;
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Visible = false;
@@ -101,16 +101,17 @@ namespace myWay.myComponents
             this.btnBody.FlatAppearance.BorderSize = 0;
             this.btnBody.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.btnBody.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBody.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBody.IconChar = FontAwesome.Sharp.IconChar._500Px;
+            this.btnBody.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
             this.btnBody.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnBody.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnBody.IconSize = 15;
+            this.btnBody.IconSize = 38;
             this.btnBody.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnBody.Location = new System.Drawing.Point(0, 1);
             this.btnBody.Name = "btnBody";
-            this.btnBody.Size = new System.Drawing.Size(256, 28);
+            this.btnBody.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBody.Size = new System.Drawing.Size(488, 51);
             this.btnBody.TabIndex = 11;
             this.btnBody.Text = "Value";
             this.btnBody.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -128,7 +129,7 @@ namespace myWay.myComponents
             this.Controls.Add(this.btnBody);
             this.Name = "ucRaccourcis";
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            this.Size = new System.Drawing.Size(256, 30);
+            this.Size = new System.Drawing.Size(488, 53);
             this.pnlToolbox.ResumeLayout(false);
             this.ResumeLayout(false);
 

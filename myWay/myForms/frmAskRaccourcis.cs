@@ -73,13 +73,13 @@ namespace myWay.myForms
             {
                 MessageBox.Show("Impossible !\nUn raccourci du même nom existe déjà", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if(inputType == "edit" && inputRaccourcis.getName() != tbxInputName.Text && data.dataTemp.selectedSection.raccourcisExists(tbxInputName.Text))
+            else if (inputType == "edit" && inputRaccourcis.getName() != tbxInputName.Text && data.dataTemp.selectedSection.raccourcisExists(tbxInputName.Text))
             {
                 MessageBox.Show("Impossible !\nUn raccourci du même nom existe déjà", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (tbxInputName.Text == null || tbxInputName.Text == "")
+            else if (tbxInputName.Text == null || tbxInputName.Text == "" || tbxInputChemin.Text == null || tbxInputChemin.Text == "")
             {
-                MessageBox.Show("Impossible !\nLe champ Nom est requis", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Impossible !\nLe champ Nom et Chemin sont requis !", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (testChar[0] == ' ' || testChar[testChar.Length - 1] == ' ')
             {
@@ -91,7 +91,7 @@ namespace myWay.myForms
                 {
                     case "add":
                         data.dataTemp.selectedSection.addShortcut(tbxInputName.Text, tbxInputChemin.Text ,tbxInputDescription.Text);
-                        frmMain.refreshPnlContent();
+                        frmMain.refreshContents();
                         break;
 
                     case "edit":
@@ -106,7 +106,11 @@ namespace myWay.myForms
         }
         private void btnChooseFile_Click(object sender, EventArgs e)
         {
-
+            ofd.ShowDialog();
+            if(ofd.FileName != null || ofd.FileName != "")
+            {
+                tbxInputChemin.Text = ofd.FileName;
+            }
         }
     }
 }

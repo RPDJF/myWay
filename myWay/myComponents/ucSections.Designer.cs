@@ -136,8 +136,8 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlToolbox;
-        private FontAwesome.Sharp.IconButton btnBody;
         private FontAwesome.Sharp.IconButton btnEdit;
         private FontAwesome.Sharp.IconButton btnRemove;
+        public FontAwesome.Sharp.IconButton btnBody;
     }
 }

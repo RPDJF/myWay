@@ -19,14 +19,14 @@ namespace myWay.data
         // Object Sections
         public static void addSection(ucSections mySection)
         {
+            mySection.Dock = System.Windows.Forms.DockStyle.Top;
             listSections.Add(mySection);
         }
         // Generate new one
-        public static void addSection(String input, System.Windows.Forms.DockStyle dock)
+        public static void addSection(String input)
         {
             ucSections mySection = new ucSections(input);
-            mySection.Dock = dock;
-            listSections.Add(mySection);
+            addSection(mySection);
         }
         // END - Add section
         // Remove specific section
@@ -40,7 +40,7 @@ namespace myWay.data
         {
             foreach (ucSections mySection in GetSections())
             {
-                if (mySection.getValue() == inputSection.getValue()) return true; // return true if find similar section on reference list
+                if (mySection.getName() == inputSection.getName()) return true; // return true if find similar section on reference list
             }
             return false;
         }

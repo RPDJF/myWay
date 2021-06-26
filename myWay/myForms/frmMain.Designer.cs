@@ -47,9 +47,9 @@ namespace myWay
             this.lblSection = new System.Windows.Forms.Label();
             this.pnlLeftBorder = new System.Windows.Forms.Panel();
             this.btnOpenSection = new FontAwesome.Sharp.IconButton();
-            this.spliterRaccourcis = new System.Windows.Forms.SplitContainer();
+            this.pnlRaccourcisContent = new System.Windows.Forms.Panel();
+            this.pnlRaccourcisTop = new System.Windows.Forms.Panel();
             this.btnAddRaccourcis = new FontAwesome.Sharp.IconButton();
-            this.lblRaccourcisLabel = new System.Windows.Forms.Label();
             this.pnlAppTopBar.SuspendLayout();
             this.pnlTopBar.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -57,9 +57,7 @@ namespace myWay
             this.pnlToolbar.SuspendLayout();
             this.pnlAppTitle.SuspendLayout();
             this.pnlLeftBorder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spliterRaccourcis)).BeginInit();
-            this.spliterRaccourcis.Panel2.SuspendLayout();
-            this.spliterRaccourcis.SuspendLayout();
+            this.pnlRaccourcisTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlAppTopBar
@@ -164,10 +162,10 @@ namespace myWay
             this.lblCollection.ForeColor = System.Drawing.Color.White;
             this.lblCollection.Location = new System.Drawing.Point(6, 13);
             this.lblCollection.Name = "lblCollection";
-            this.lblCollection.Size = new System.Drawing.Size(88, 26);
+            this.lblCollection.Size = new System.Drawing.Size(0, 26);
             this.lblCollection.TabIndex = 4;
-            this.lblCollection.Text = "Default";
             this.lblCollection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCollection.TextChanged += new System.EventHandler(this.lblCollection_TextChanged);
             // 
             // pnlLeft
             // 
@@ -181,7 +179,6 @@ namespace myWay
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(256, 412);
             this.pnlLeft.TabIndex = 4;
-            this.pnlLeft.Visible = false;
             // 
             // pnlSectionContent
             // 
@@ -274,6 +271,7 @@ namespace myWay
             this.btnAddSection.FlatAppearance.BorderSize = 0;
             this.btnAddSection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.btnAddSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnAddSection.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddSection.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAddSection.IconColor = System.Drawing.Color.WhiteSmoke;
@@ -284,6 +282,9 @@ namespace myWay
             this.btnAddSection.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnAddSection.Size = new System.Drawing.Size(256, 38);
             this.btnAddSection.TabIndex = 0;
+            this.btnAddSection.Text = "Section";
+            this.btnAddSection.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddSection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddSection.UseVisualStyleBackColor = false;
             this.btnAddSection.Click += new System.EventHandler(this.btnAddSection_Click);
             // 
@@ -338,25 +339,28 @@ namespace myWay
             this.btnOpenSection.UseVisualStyleBackColor = false;
             this.btnOpenSection.Click += new System.EventHandler(this.btnIcon_Click);
             // 
-            // spliterRaccourcis
+            // pnlRaccourcisContent
             // 
-            this.spliterRaccourcis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spliterRaccourcis.Location = new System.Drawing.Point(298, 86);
-            this.spliterRaccourcis.Name = "spliterRaccourcis";
+            this.pnlRaccourcisContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlRaccourcisContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRaccourcisContent.Location = new System.Drawing.Point(298, 124);
+            this.pnlRaccourcisContent.Name = "pnlRaccourcisContent";
+            this.pnlRaccourcisContent.Size = new System.Drawing.Size(488, 324);
+            this.pnlRaccourcisContent.TabIndex = 13;
             // 
-            // spliterRaccourcis.Panel2
+            // pnlRaccourcisTop
             // 
-            this.spliterRaccourcis.Panel2.BackColor = System.Drawing.Color.SlateBlue;
-            this.spliterRaccourcis.Panel2.Controls.Add(this.btnAddRaccourcis);
-            this.spliterRaccourcis.Panel2.Controls.Add(this.lblRaccourcisLabel);
-            this.spliterRaccourcis.Panel2.Padding = new System.Windows.Forms.Padding(10, 20, 10, 0);
-            this.spliterRaccourcis.Size = new System.Drawing.Size(488, 362);
-            this.spliterRaccourcis.SplitterDistance = 298;
-            this.spliterRaccourcis.TabIndex = 13;
+            this.pnlRaccourcisTop.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.pnlRaccourcisTop.Controls.Add(this.btnAddRaccourcis);
+            this.pnlRaccourcisTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlRaccourcisTop.Location = new System.Drawing.Point(298, 86);
+            this.pnlRaccourcisTop.Name = "pnlRaccourcisTop";
+            this.pnlRaccourcisTop.Size = new System.Drawing.Size(488, 38);
+            this.pnlRaccourcisTop.TabIndex = 16;
             // 
             // btnAddRaccourcis
             // 
-            this.btnAddRaccourcis.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddRaccourcis.BackColor = System.Drawing.Color.SlateBlue;
             this.btnAddRaccourcis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddRaccourcis.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddRaccourcis.FlatAppearance.BorderSize = 0;
@@ -368,40 +372,26 @@ namespace myWay
             this.btnAddRaccourcis.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnAddRaccourcis.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddRaccourcis.IconSize = 20;
-            this.btnAddRaccourcis.Location = new System.Drawing.Point(10, 50);
+            this.btnAddRaccourcis.Location = new System.Drawing.Point(0, 0);
             this.btnAddRaccourcis.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnAddRaccourcis.Name = "btnAddRaccourcis";
             this.btnAddRaccourcis.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnAddRaccourcis.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAddRaccourcis.Size = new System.Drawing.Size(166, 38);
-            this.btnAddRaccourcis.TabIndex = 6;
-            this.btnAddRaccourcis.Text = "Nouveau";
+            this.btnAddRaccourcis.Size = new System.Drawing.Size(488, 38);
+            this.btnAddRaccourcis.TabIndex = 16;
+            this.btnAddRaccourcis.Text = "Raccourci";
             this.btnAddRaccourcis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddRaccourcis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddRaccourcis.UseVisualStyleBackColor = false;
             this.btnAddRaccourcis.Click += new System.EventHandler(this.btnAddRaccourcis_Click);
-            // 
-            // lblRaccourcisLabel
-            // 
-            this.lblRaccourcisLabel.AutoSize = true;
-            this.lblRaccourcisLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblRaccourcisLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaccourcisLabel.ForeColor = System.Drawing.Color.White;
-            this.lblRaccourcisLabel.Location = new System.Drawing.Point(10, 20);
-            this.lblRaccourcisLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 50);
-            this.lblRaccourcisLabel.Name = "lblRaccourcisLabel";
-            this.lblRaccourcisLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.lblRaccourcisLabel.Size = new System.Drawing.Size(94, 30);
-            this.lblRaccourcisLabel.TabIndex = 7;
-            this.lblRaccourcisLabel.Text = "Raccourcis";
-            this.lblRaccourcisLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 450);
-            this.Controls.Add(this.spliterRaccourcis);
+            this.Controls.Add(this.pnlRaccourcisContent);
+            this.Controls.Add(this.pnlRaccourcisTop);
             this.Controls.Add(this.pnlTopBar);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.pnlAppTopBar);
@@ -409,6 +399,7 @@ namespace myWay
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(2);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "myWay";
             this.pnlAppTopBar.ResumeLayout(false);
             this.pnlAppTopBar.PerformLayout();
@@ -420,10 +411,7 @@ namespace myWay
             this.pnlAppTitle.ResumeLayout(false);
             this.pnlAppTitle.PerformLayout();
             this.pnlLeftBorder.ResumeLayout(false);
-            this.spliterRaccourcis.Panel2.ResumeLayout(false);
-            this.spliterRaccourcis.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spliterRaccourcis)).EndInit();
-            this.spliterRaccourcis.ResumeLayout(false);
+            this.pnlRaccourcisTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -441,16 +429,16 @@ namespace myWay
         private System.Windows.Forms.Panel pnlLeftBorder;
         private FontAwesome.Sharp.IconButton btnOpenSection;
         private System.Windows.Forms.Label lblSection;
-        private System.Windows.Forms.Label lblCollection;
         private System.Windows.Forms.Panel pnlToolbar;
         private System.Windows.Forms.Panel pnlSearchBar;
         private FontAwesome.Sharp.IconButton btnSearch;
         private MetroSet_UI.Controls.MetroSetTextBox mtbxSectionSearch;
         private FontAwesome.Sharp.IconButton btnAddSection;
         public System.Windows.Forms.Panel pnlSectionContent;
-        private System.Windows.Forms.SplitContainer spliterRaccourcis;
+        public System.Windows.Forms.Label lblCollection;
+        private System.Windows.Forms.Panel pnlRaccourcisContent;
+        private System.Windows.Forms.Panel pnlRaccourcisTop;
         private FontAwesome.Sharp.IconButton btnAddRaccourcis;
-        private System.Windows.Forms.Label lblRaccourcisLabel;
     }
 }
 

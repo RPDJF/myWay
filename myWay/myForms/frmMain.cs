@@ -14,11 +14,11 @@ using myWay.data;
 
 namespace myWay
 {
-
     public partial class frmMain : Form
     {
         // vars
         List<ucSections> listSections = data.dataSections.GetSections();
+        List<ucRaccourcis> listRaccourcis = new List<ucRaccourcis>();
         // WINDOW DRAG VAR
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -38,6 +38,13 @@ namespace myWay
             Panel outputPanel = inputPanel;
             outputPanel.Controls.Clear(); // clear actual shown sections
             if (listSections.Count <= 0) return outputPanel; // stop here if no sections
+            foreach(ucSections section in listSections)
+            {
+                if(!section.getReady())
+                {
+                    section.btnBody.Click += (s,e) => { lblCollection.Text = dataTemp.selectedSection.getName(); };
+                }
+            }
             ucSections[] aSections = sectionsList.ToArray();
             outputPanel.Controls.AddRange(aSections);
             return outputPanel; // return the new panel
@@ -58,10 +65,14 @@ namespace myWay
             outputPanel.Controls.AddRange(aRaccourcis);
             return outputPanel; // return the new panel
         }
-        public void refreshPnlContent()
+        public void refreshContents()
         {
             setComponentToPanel(pnlSectionContent, dataSections.GetSections());
-            if(dataTemp.selectedSection != null) setComponentToPanel(spliterRaccourcis.Panel1, dataTemp.selectedSection.getRaccourcis());
+            if(dataTemp.selectedSection != null) setComponentToPanel(pnlRaccourcisContent, dataTemp.selectedSection.getRaccourcis());
+            if(data.dataTemp.selectedSection != null)
+            {
+                lblCollection.Text = data.dataTemp.selectedSection.getName();
+            }
             return;
         }
         // END - Generate - Refresh component in panels
@@ -134,7 +145,7 @@ namespace myWay
             String searchFilter = mtbxSectionSearch.Text; // get data from research bar
             foreach(ucSections mySection in listSections)
             {
-                if (mySection.getValue().Contains(searchFilter)) filteredSections.Add(mySection); // add results to filtered list
+                if (mySection.getName().Contains(searchFilter)) filteredSections.Add(mySection); // add results to filtered list
             }
             pnlSectionContent = setComponentToPanel(pnlSectionContent, filteredSections); // show filtered list
 
@@ -146,18 +157,30 @@ namespace myWay
         private void btnAddSection_Click(object sender, EventArgs e)
         {
             myForms.frmAskTextInput askName = new myForms.frmAskTextInput("add");
-            askName.FormClosed += (s, ex) => {refreshPnlContent();};
+            askName.FormClosed += (s, ex) => {refreshContents();};
             askName.ShowDialog();
         }
 
         private void btnAddRaccourcis_Click(object sender, EventArgs e)
         {
-            if(dataTemp.selectedSection != null)
+            if (dataSections.GetSections().Count <= 0)
+            {
+                var confirm = MessageBox.Show("Vous devez d'abord créer une nouvelle section.\n\nCréer une nouvelle section ?", "Créer une nouvelle section", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm.ToString() == "Yes")
+                {
+                    btnAddSection_Click(sender, e);
+                }
+            }
+            if (dataTemp.selectedSection != null)
             {
                 myForms.frmAskRaccourcis frmAskRaccourcis = new myForms.frmAskRaccourcis("add");
-                frmAskRaccourcis.FormClosed += (s, ex) => { refreshPnlContent(); };
+                frmAskRaccourcis.FormClosed += (s, ex) => { refreshContents(); };
                 frmAskRaccourcis.ShowDialog();
             }
+        }
+        private void lblCollection_TextChanged(object sender, EventArgs e)
+        {
+            setComponentToPanel(pnlRaccourcisContent,dataTemp.selectedSection.getRaccourcis());
         }
         // END - CONTROLS EVENTS
     }

@@ -16,7 +16,7 @@ namespace myWay.myForms
     {
         // var
         private String inputType;
-        private Sections inputSection;
+        private ucSections inputSection;
         // WINDOW DRAG VAR
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -30,10 +30,10 @@ namespace myWay.myForms
         public frmAskTextInput(String inputType) : this(inputType, null)
         {
         }
-        public frmAskTextInput(String inputType, Sections inputSection) : this(inputType,  inputSection, null)
+        public frmAskTextInput(String inputType, ucSections inputSection) : this(inputType,  inputSection, null)
         {
         }
-        public frmAskTextInput(String inputType, Sections inputSection, String autoComplete)
+        public frmAskTextInput(String inputType, ucSections inputSection, String autoComplete)
         {
             InitializeComponent();
             this.inputType = inputType;
@@ -68,7 +68,7 @@ namespace myWay.myForms
         {
             Char[] testChar = tbxInput.Text.ToCharArray();
             frmMain frmMain = new frmMain();
-            if (data.dataSections.sectionExists(new myComponents.Sections(tbxInput.Text)))
+            if (data.dataSections.sectionExists(new myComponents.ucSections(tbxInput.Text)))
             {
                 MessageBox.Show("Impossible !\nUne séction du même nom existe déjà","ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -86,7 +86,7 @@ namespace myWay.myForms
                 {
                     case "add":
                         data.dataSections.addSection(tbxInput.Text, DockStyle.Top);
-                        frmMain.refreshPnlSectionContent();
+                        frmMain.refreshPnlContent();
                         break;
 
                     case "edit":

@@ -18,7 +18,7 @@ namespace myWay
     public partial class frmMain : Form
     {
         // vars
-        List<Sections> listSections = data.dataSections.GetSections();
+        List<ucSections> listSections = data.dataSections.GetSections();
         // WINDOW DRAG VAR
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -33,18 +33,35 @@ namespace myWay
             InitializeComponent();
         }
         // Generate - Refresh component in panels
-        public Panel setComponentToPanel(Panel inputPanel, List<Sections> sectionsList)
+        public Panel setComponentToPanel(Panel inputPanel, List<ucSections> sectionsList)
         {
             Panel outputPanel = inputPanel;
             outputPanel.Controls.Clear(); // clear actual shown sections
             if (listSections.Count <= 0) return outputPanel; // stop here if no sections
-            Sections[] aSections = sectionsList.ToArray();
+            ucSections[] aSections = sectionsList.ToArray();
             outputPanel.Controls.AddRange(aSections);
             return outputPanel; // return the new panel
         }
-        public void refreshPnlSectionContent()
+        public Panel setComponentToPanel(Panel inputPanel, List<myClass.raccourcis> classRacourcis)
+        {
+            Panel outputPanel = inputPanel;
+            List<ucRaccourcis> listRaccourcis = new List<ucRaccourcis>();
+            foreach(myClass.raccourcis myRaccourcis in dataTemp.selectedSection.getRaccourcis())
+            {
+                ucRaccourcis myUcRaccourcis = new ucRaccourcis(myRaccourcis);
+                myUcRaccourcis.Dock = DockStyle.Top;
+                listRaccourcis.Add(myUcRaccourcis);
+            }
+            outputPanel.Controls.Clear(); // clear actual shown sections
+            if (listSections.Count <= 0) return outputPanel; // stop here if no sections
+            ucRaccourcis[] aRaccourcis = listRaccourcis.ToArray();
+            outputPanel.Controls.AddRange(aRaccourcis);
+            return outputPanel; // return the new panel
+        }
+        public void refreshPnlContent()
         {
             setComponentToPanel(pnlSectionContent, dataSections.GetSections());
+            if(dataTemp.selectedSection != null) setComponentToPanel(spliterRaccourcis.Panel1, dataTemp.selectedSection.getRaccourcis());
             return;
         }
         // END - Generate - Refresh component in panels
@@ -113,9 +130,9 @@ namespace myWay
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (listSections.Count <= 0) return; // cancel if no existing sections
-            List<Sections> filteredSections = new List<Sections>(); // list that will contain results
+            List<ucSections> filteredSections = new List<ucSections>(); // list that will contain results
             String searchFilter = mtbxSectionSearch.Text; // get data from research bar
-            foreach(Sections mySection in listSections)
+            foreach(ucSections mySection in listSections)
             {
                 if (mySection.getValue().Contains(searchFilter)) filteredSections.Add(mySection); // add results to filtered list
             }
@@ -129,8 +146,19 @@ namespace myWay
         private void btnAddSection_Click(object sender, EventArgs e)
         {
             myForms.frmAskTextInput askName = new myForms.frmAskTextInput("add");
-            askName.FormClosed += (s, ex) => {refreshPnlSectionContent();};
+            askName.FormClosed += (s, ex) => {refreshPnlContent();};
             askName.ShowDialog();
         }
+
+        private void btnAddRaccourcis_Click(object sender, EventArgs e)
+        {
+            if(dataTemp.selectedSection != null)
+            {
+                myForms.frmAskRaccourcis frmAskRaccourcis = new myForms.frmAskRaccourcis("add");
+                frmAskRaccourcis.FormClosed += (s, ex) => { refreshPnlContent(); };
+                frmAskRaccourcis.ShowDialog();
+            }
+        }
+        // END - CONTROLS EVENTS
     }
 }

@@ -1,6 +1,7 @@
-﻿namespace myWay.myComponents
+﻿
+namespace myWay.myComponents
 {
-    partial class Sections
+    partial class ucRaccourcis
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -45,7 +46,7 @@
             this.pnlToolbox.Location = new System.Drawing.Point(204, 1);
             this.pnlToolbox.Name = "pnlToolbox";
             this.pnlToolbox.Size = new System.Drawing.Size(52, 28);
-            this.pnlToolbox.TabIndex = 10;
+            this.pnlToolbox.TabIndex = 12;
             this.pnlToolbox.MouseEnter += new System.EventHandler(this.ShowTools);
             // 
             // btnEdit
@@ -89,7 +90,7 @@
             this.btnRemove.TabIndex = 8;
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Visible = false;
-            this.btnRemove.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnRemove_Click);
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             this.btnRemove.MouseLeave += new System.EventHandler(this.HideTools);
             // 
             // btnBody
@@ -110,21 +111,22 @@
             this.btnBody.Location = new System.Drawing.Point(0, 1);
             this.btnBody.Name = "btnBody";
             this.btnBody.Size = new System.Drawing.Size(256, 28);
-            this.btnBody.TabIndex = 9;
+            this.btnBody.TabIndex = 11;
             this.btnBody.Text = "Value";
             this.btnBody.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBody.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBody.UseVisualStyleBackColor = false;
+            this.btnBody.Click += new System.EventHandler(this.btnBody_Click);
             this.btnBody.MouseEnter += new System.EventHandler(this.ShowTools);
             this.btnBody.MouseLeave += new System.EventHandler(this.HideTools);
             // 
-            // Sections
+            // ucRaccourcis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlToolbox);
             this.Controls.Add(this.btnBody);
-            this.Name = "Sections";
+            this.Name = "ucRaccourcis";
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.Size = new System.Drawing.Size(256, 30);
             this.pnlToolbox.ResumeLayout(false);
@@ -135,8 +137,8 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlToolbox;
-        private FontAwesome.Sharp.IconButton btnBody;
         private FontAwesome.Sharp.IconButton btnEdit;
         private FontAwesome.Sharp.IconButton btnRemove;
+        private FontAwesome.Sharp.IconButton btnBody;
     }
 }

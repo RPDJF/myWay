@@ -12,37 +12,35 @@ using myWay.myClass;
 
 namespace myWay.myComponents
 {
-    public partial class Sections : UserControl
+    public partial class ucRaccourcis : UserControl
     {
         // var
-        private String name;
+        private myClass.raccourcis contextRaccourcis;
 
-        // list raccourcis
-        private List<raccourcis> listRaccourcis = new List<raccourcis>();
-        public Sections(String name)
+        public ucRaccourcis(myClass.raccourcis contextRaccourcis)
         {
             InitializeComponent();
             pnlToolbox.BackColor = btnBody.BackColor;
-            this.name = name;
+            this.contextRaccourcis = contextRaccourcis;
             refresh();
         }
         // Getters
-        public String getValue()
+        public String getName()
         {
-            return this.name;
+            return contextRaccourcis.getName();
         }
         // END - Getters
         // Setters
-        public void setValue(String name)
+        public void setName(String name)
         {
-            this.name = name;
+            this.contextRaccourcis.setName(name);
             refresh();
         }
         // END - Setters
         // Refresh component
         public void refresh()
         {
-            btnBody.Text = name;
+            btnBody.Text = contextRaccourcis.getName() + " - " + contextRaccourcis.getDescription();
         }
         // END - Refresh component
         // Display toolbox
@@ -65,35 +63,21 @@ namespace myWay.myComponents
             btnRemove.Visible = false;
         }
         // END - Hide toolbox
-        // Add new shortcut
-        public void addShortcut(String name)
-        {
-            listRaccourcis.Add(new raccourcis(name));
-        }
-        public void addShortcut(String name, String description)
-        {
-            listRaccourcis.Add(new raccourcis(name, description));
-        }
-        public void addShortcut(String name, String description, Color color)
-        {
-            listRaccourcis.Add(new raccourcis(name, description, color));
-        }
-        // END - Add new shortcut
         // Control events
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            dataSections.removeSection(this);
+            dataTemp.selectedSection.removeShortcut(this.getName());
             this.Parent = null;
             this.DestroyHandle();
         }
-        private void Sections_Enter(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            myForms.frmAskTextInput askName = new myForms.frmAskTextInput("edit", this, this.name);
-            askName.ShowDialog();
+            myForms.frmAskRaccourcis askRaccourcis = new myForms.frmAskRaccourcis("edit",contextRaccourcis);
+            askRaccourcis.FormClosed += (s, ex) => { refresh(); };
+            askRaccourcis.ShowDialog();
+        }
+        private void btnBody_Click(object sender, EventArgs e)
+        {
         }
         // END - Control events
     }

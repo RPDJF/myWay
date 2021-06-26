@@ -32,18 +32,19 @@ namespace myWay.myForms
             this.pnlAppTopBar = new System.Windows.Forms.Panel();
             this.lblAppName = new System.Windows.Forms.Label();
             this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.lblInput = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tbxInput = new MetroSet_UI.Controls.MetroSetTextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.pnlTopBar = new System.Windows.Forms.Panel();
             this.btnConfirm = new MetroSet_UI.Controls.MetroSetButton();
             this.btnCancel = new MetroSet_UI.Controls.MetroSetButton();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.lblRequired = new System.Windows.Forms.Label();
             this.pnlAppTopBar.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.pnlTopBar.SuspendLayout();
+            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlAppTopBar
@@ -89,19 +90,17 @@ namespace myWay.myForms
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panel1
+            // lblInput
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.pnlTopBar);
-            this.panel1.Controls.Add(this.iconPictureBox1);
-            this.panel1.Controls.Add(this.tbxInput);
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Controls.Add(this.lblInput);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(2, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(364, 137);
-            this.panel1.TabIndex = 11;
+            this.lblInput.AutoSize = true;
+            this.lblInput.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInput.ForeColor = System.Drawing.Color.Black;
+            this.lblInput.Location = new System.Drawing.Point(8, 62);
+            this.lblInput.Name = "lblInput";
+            this.lblInput.Size = new System.Drawing.Size(47, 16);
+            this.lblInput.TabIndex = 11;
+            this.lblInput.Text = "Nom :";
+            this.lblInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitle
             // 
@@ -114,18 +113,6 @@ namespace myWay.myForms
             this.lblTitle.TabIndex = 13;
             this.lblTitle.Text = "Nommer la section";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblInput
-            // 
-            this.lblInput.AutoSize = true;
-            this.lblInput.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInput.ForeColor = System.Drawing.Color.Black;
-            this.lblInput.Location = new System.Drawing.Point(8, 62);
-            this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(47, 16);
-            this.lblInput.TabIndex = 11;
-            this.lblInput.Text = "Nom :";
-            this.lblInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbxInput
             // 
@@ -141,7 +128,7 @@ namespace myWay.myForms
             this.tbxInput.Image = null;
             this.tbxInput.IsDerivedStyle = false;
             this.tbxInput.Lines = null;
-            this.tbxInput.Location = new System.Drawing.Point(61, 59);
+            this.tbxInput.Location = new System.Drawing.Point(64, 59);
             this.tbxInput.MaxLength = 32767;
             this.tbxInput.Multiline = false;
             this.tbxInput.Name = "tbxInput";
@@ -203,7 +190,7 @@ namespace myWay.myForms
             this.btnConfirm.Style = MetroSet_UI.Enums.Style.Light;
             this.btnConfirm.StyleManager = null;
             this.btnConfirm.TabIndex = 0;
-            this.btnConfirm.Text = "confirmer";
+            this.btnConfirm.Text = "Confirmer";
             this.btnConfirm.ThemeAuthor = "Narwin";
             this.btnConfirm.ThemeName = "MetroLite";
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -230,10 +217,36 @@ namespace myWay.myForms
             this.btnCancel.Style = MetroSet_UI.Enums.Style.Light;
             this.btnCancel.StyleManager = null;
             this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "annuler";
+            this.btnCancel.Text = "Annuler";
             this.btnCancel.ThemeAuthor = "Narwin";
             this.btnCancel.ThemeName = "MetroLite";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlContent.Controls.Add(this.lblRequired);
+            this.pnlContent.Controls.Add(this.pnlTopBar);
+            this.pnlContent.Controls.Add(this.iconPictureBox1);
+            this.pnlContent.Controls.Add(this.tbxInput);
+            this.pnlContent.Controls.Add(this.lblTitle);
+            this.pnlContent.Controls.Add(this.lblInput);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(2, 30);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(364, 137);
+            this.pnlContent.TabIndex = 11;
+            // 
+            // lblRequired
+            // 
+            this.lblRequired.AutoSize = true;
+            this.lblRequired.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblRequired.Location = new System.Drawing.Point(48, 59);
+            this.lblRequired.Name = "lblRequired";
+            this.lblRequired.Size = new System.Drawing.Size(17, 16);
+            this.lblRequired.TabIndex = 23;
+            this.lblRequired.Text = "*";
             // 
             // frmAskTextInput
             // 
@@ -241,7 +254,7 @@ namespace myWay.myForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(368, 169);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlAppTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAskTextInput";
@@ -250,10 +263,10 @@ namespace myWay.myForms
             this.Text = "frmAskTextInput";
             this.pnlAppTopBar.ResumeLayout(false);
             this.pnlAppTopBar.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.pnlTopBar.ResumeLayout(false);
+            this.pnlContent.ResumeLayout(false);
+            this.pnlContent.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -263,13 +276,14 @@ namespace myWay.myForms
         private System.Windows.Forms.Panel pnlAppTopBar;
         private System.Windows.Forms.Label lblAppName;
         private FontAwesome.Sharp.IconButton btnClose;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblInput;
+        private System.Windows.Forms.Label lblTitle;
         private MetroSet_UI.Controls.MetroSetTextBox tbxInput;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Panel pnlTopBar;
-        private MetroSet_UI.Controls.MetroSetButton btnConfirm;
         private MetroSet_UI.Controls.MetroSetButton btnCancel;
+        private MetroSet_UI.Controls.MetroSetButton btnConfirm;
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Label lblRequired;
     }
 }

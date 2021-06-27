@@ -9,21 +9,22 @@ namespace myWay.data
 {
     public class dataSections
     {
+        // data
         private static List<ucSections> listSections = new List<ucSections>();
-        
+
+        // Getters
         public static List<ucSections> GetSections()
         {
             return listSections;
         }
+        // End - Getters
         // Add section
-        // Object Sections
         public static ucSections addSection(ucSections mySection)
         {
             mySection.Dock = System.Windows.Forms.DockStyle.Top;
             listSections.Add(mySection);
             return mySection;
         }
-        // Generate new one
         public static ucSections addSection(String input)
         {
             ucSections mySection = new ucSections(input);

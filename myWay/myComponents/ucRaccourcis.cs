@@ -81,7 +81,17 @@ namespace myWay.myComponents
         {
             try
             {
-                System.Diagnostics.Process.Start(this.contextRaccourcis.getPath());
+                String runPath = this.contextRaccourcis.getPath();
+                String[] aRunPath = runPath.Split('@');
+                if(aRunPath.GetLength(0) > 1)
+                {
+                    System.Diagnostics.Process.Start("mailto:" + this.contextRaccourcis.getPath()); // try to send mail
+                }
+                else
+                {
+                    System.Diagnostics.Process.Start(this.contextRaccourcis.getPath()); // try to run shortcut
+                }
+                
             }
             catch(Exception ex)
             {

@@ -9,6 +9,7 @@ namespace myWay.data
 {
     class dataTemp
     {
+        // data
         public static ucSections selectedSection;
     }
 }

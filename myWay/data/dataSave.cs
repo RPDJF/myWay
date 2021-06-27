@@ -91,6 +91,8 @@ namespace myWay.data
                 MessageBox.Show("Les données que vous essayez d'importer sont illisibles !", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // END - Import sections and their shortcuts
+        // Initialize directories
         public void initializeDirectories()
         {
             if (!Directory.Exists(savePath))
@@ -98,6 +100,7 @@ namespace myWay.data
                 Directory.CreateDirectory(savePath);
             }
         }
-        // END - Import sections and their shortcuts
+        // END - Initialize directories
+       
     }
 }

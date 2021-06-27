@@ -29,6 +29,7 @@ namespace myWay
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlAppTopBar = new System.Windows.Forms.Panel();
             this.lblAppName = new System.Windows.Forms.Label();
             this.btnReduce = new FontAwesome.Sharp.IconButton();
@@ -398,6 +399,7 @@ namespace myWay
             this.Controls.Add(this.pnlAppTopBar);
             this.Controls.Add(this.pnlLeftBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

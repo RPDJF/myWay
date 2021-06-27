@@ -9,6 +9,9 @@ namespace myWay.myClass
 {
     public class raccourcis
     {
+        // !!!!!
+        // Could be replaced by ucRaccourcis.cs soon
+
         // Properties
         private String name;
         private String description;

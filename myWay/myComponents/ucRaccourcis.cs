@@ -67,6 +67,7 @@ namespace myWay.myComponents
         private void btnRemove_Click(object sender, EventArgs e)
         {
             dataTemp.selectedSection.removeShortcut(this.getName());
+            data.dataSave saver = new dataSave(); saver.saveSections();
             this.Parent = null;
             this.DestroyHandle();
         }

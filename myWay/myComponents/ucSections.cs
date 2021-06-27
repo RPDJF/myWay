@@ -136,6 +136,7 @@ namespace myWay.myComponents
         private void btnRemove_Click(object sender, EventArgs e)
         {
             dataSections.removeSection(this);
+            data.dataSave saver = new dataSave(); saver.saveSections();
             this.Parent = null;
             this.DestroyHandle();
         }

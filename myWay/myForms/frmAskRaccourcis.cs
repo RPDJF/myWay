@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using myWay.myClass;
+using myWay.data;
 
 namespace myWay.myForms
 {
@@ -87,10 +88,12 @@ namespace myWay.myForms
             }
             else
             {
+                dataSave saver = new dataSave();
                 switch (inputType)
                 {
                     case "add":
-                        data.dataTemp.selectedSection.addShortcut(tbxInputName.Text, tbxInputChemin.Text ,tbxInputDescription.Text);
+                        dataTemp.selectedSection.addShortcut(tbxInputName.Text, tbxInputChemin.Text ,tbxInputDescription.Text);
+                        saver.saveSections();
                         frmMain.refreshContents();
                         break;
 
@@ -98,6 +101,7 @@ namespace myWay.myForms
                         inputRaccourcis.setName(tbxInputName.Text);
                         inputRaccourcis.setDescription(tbxInputDescription.Text);
                         inputRaccourcis.setPath(tbxInputChemin.Text);
+                        saver.saveSections();
                         break;
                 }
 

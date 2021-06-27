@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="data\dataSections.cs" />
     <Compile Include="data\dataTemp.cs" />
+    <Compile Include="data\dataSave.cs" />
     <Compile Include="myClass\raccourcis.cs" />
     <Compile Include="myComponents\ucRaccourcis.cs">
       <SubType>UserControl</SubType>

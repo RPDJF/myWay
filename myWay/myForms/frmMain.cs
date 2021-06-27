@@ -142,10 +142,10 @@ namespace myWay
         {
             if (listSections.Count <= 0) return; // cancel if no existing sections
             List<ucSections> filteredSections = new List<ucSections>(); // list that will contain results
-            String searchFilter = mtbxSectionSearch.Text; // get data from research bar
+            String searchFilter = mtbxSectionSearch.Text.ToLower(); // get data from research bar
             foreach(ucSections mySection in listSections)
             {
-                if (mySection.getName().Contains(searchFilter)) filteredSections.Add(mySection); // add results to filtered list
+                if (mySection.getName().ToLower().Contains(searchFilter)) filteredSections.Add(mySection); // add results to filtered list
             }
             pnlSectionContent = setComponentToPanel(pnlSectionContent, filteredSections); // show filtered list
 
@@ -157,7 +157,7 @@ namespace myWay
         private void btnAddSection_Click(object sender, EventArgs e)
         {
             myForms.frmAskTextInput askName = new myForms.frmAskTextInput("add");
-            askName.FormClosed += (s, ex) => {refreshContents();};
+            askName.FormClosed += (s, ex) => {refreshContents(); /*data.dataSave saver = new dataSave();saver.saveSections();*/ };
             askName.ShowDialog();
         }
 
@@ -174,13 +174,20 @@ namespace myWay
             if (dataTemp.selectedSection != null)
             {
                 myForms.frmAskRaccourcis frmAskRaccourcis = new myForms.frmAskRaccourcis("add");
-                frmAskRaccourcis.FormClosed += (s, ex) => { refreshContents(); };
+                frmAskRaccourcis.FormClosed += (s, ex) => { refreshContents(); /*data.dataSave saver = new dataSave(); saver.saveSections();*/ };
                 frmAskRaccourcis.ShowDialog();
             }
         }
         private void lblCollection_TextChanged(object sender, EventArgs e)
         {
             setComponentToPanel(pnlRaccourcisContent,dataTemp.selectedSection.getRaccourcis());
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            dataSave saver = new dataSave();
+            saver.importData();
+            refreshContents();
         }
         // END - CONTROLS EVENTS
     }

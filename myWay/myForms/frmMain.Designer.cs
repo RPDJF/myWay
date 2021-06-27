@@ -341,6 +341,7 @@ namespace myWay
             // 
             // pnlRaccourcisContent
             // 
+            this.pnlRaccourcisContent.AutoScroll = true;
             this.pnlRaccourcisContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlRaccourcisContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRaccourcisContent.Location = new System.Drawing.Point(298, 124);
@@ -401,6 +402,7 @@ namespace myWay
             this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "myWay";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlAppTopBar.ResumeLayout(false);
             this.pnlAppTopBar.PerformLayout();
             this.pnlTopBar.ResumeLayout(false);

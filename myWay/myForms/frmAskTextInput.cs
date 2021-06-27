@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using myWay.myComponents;
+using myWay.data;
 
 namespace myWay.myForms
 {
@@ -68,7 +69,6 @@ namespace myWay.myForms
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             Char[] testChar = tbxInput.Text.ToCharArray();
-            frmMain frmMain = new frmMain();
             if (data.dataSections.sectionExists(new myComponents.ucSections(tbxInput.Text)))
             {
                 MessageBox.Show("Impossible !\nUne séction du même nom existe déjà","ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -83,15 +83,18 @@ namespace myWay.myForms
             }
             else
             {
+                dataSave saver = new dataSave();
                 switch (inputType)
                 {
                     case "add":
-                        data.dataSections.addSection(tbxInput.Text);
-                        frmMain.refreshContents();
+                        ucSections mySection = dataSections.addSection(tbxInput.Text);
+                        saver.saveSections();
+                        dataTemp.selectedSection = mySection;
                         break;
 
                     case "edit":
                         inputSection.setName(tbxInput.Text);
+                        saver.saveSections();
                         break;
                 }
                 
@@ -102,6 +105,22 @@ namespace myWay.myForms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbxInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnConfirm_Click(sender, e);
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnConfirm_Click(sender, e);
+            }
         }
         // END - Control events
     }

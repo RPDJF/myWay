@@ -17,16 +17,17 @@ namespace myWay.data
         }
         // Add section
         // Object Sections
-        public static void addSection(ucSections mySection)
+        public static ucSections addSection(ucSections mySection)
         {
             mySection.Dock = System.Windows.Forms.DockStyle.Top;
             listSections.Add(mySection);
+            return mySection;
         }
         // Generate new one
-        public static void addSection(String input)
+        public static ucSections addSection(String input)
         {
             ucSections mySection = new ucSections(input);
-            addSection(mySection);
+            return addSection(mySection);
         }
         // END - Add section
         // Remove specific section

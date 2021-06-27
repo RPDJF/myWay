@@ -142,6 +142,7 @@ namespace myWay.myForms
             this.tbxInput.ThemeName = "MetroLite";
             this.tbxInput.UseSystemPasswordChar = false;
             this.tbxInput.WatermarkText = "exemple";
+            this.tbxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxInput_KeyDown);
             // 
             // iconPictureBox1
             // 

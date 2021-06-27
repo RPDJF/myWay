@@ -40,13 +40,13 @@ namespace myWay.myForms
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblInputName = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblRequired = new System.Windows.Forms.Label();
             this.btnChooseFile = new MetroSet_UI.Controls.MetroSetButton();
             this.tbxInputDescription = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lblInputDescription = new System.Windows.Forms.Label();
             this.tbxInputChemin = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lblInputChemin = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.pnlAppTopBar.SuspendLayout();
             this.pnlTopBar.SuspendLayout();
@@ -94,7 +94,7 @@ namespace myWay.myForms
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(37, 28);
-            this.btnClose.TabIndex = 0;
+            this.btnClose.TabIndex = 5;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -130,7 +130,7 @@ namespace myWay.myForms
             this.btnCancel.Size = new System.Drawing.Size(75, 25);
             this.btnCancel.Style = MetroSet_UI.Enums.Style.Light;
             this.btnCancel.StyleManager = null;
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.ThemeAuthor = "Narwin";
             this.btnCancel.ThemeName = "MetroLite";
@@ -157,7 +157,7 @@ namespace myWay.myForms
             this.btnConfirm.Size = new System.Drawing.Size(75, 25);
             this.btnConfirm.Style = MetroSet_UI.Enums.Style.Light;
             this.btnConfirm.StyleManager = null;
-            this.btnConfirm.TabIndex = 0;
+            this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Confirmer";
             this.btnConfirm.ThemeAuthor = "Narwin";
             this.btnConfirm.ThemeName = "MetroLite";
@@ -199,7 +199,7 @@ namespace myWay.myForms
             this.tbxInputName.Size = new System.Drawing.Size(233, 26);
             this.tbxInputName.Style = MetroSet_UI.Enums.Style.Light;
             this.tbxInputName.StyleManager = null;
-            this.tbxInputName.TabIndex = 14;
+            this.tbxInputName.TabIndex = 0;
             this.tbxInputName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbxInputName.ThemeAuthor = "Narwin";
             this.tbxInputName.ThemeName = "MetroLite";
@@ -251,6 +251,17 @@ namespace myWay.myForms
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(364, 239);
             this.pnlContent.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(69, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 16);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "*";
             // 
             // lblRequired
             // 
@@ -312,7 +323,7 @@ namespace myWay.myForms
             this.tbxInputDescription.Size = new System.Drawing.Size(233, 26);
             this.tbxInputDescription.Style = MetroSet_UI.Enums.Style.Light;
             this.tbxInputDescription.StyleManager = null;
-            this.tbxInputDescription.TabIndex = 20;
+            this.tbxInputDescription.TabIndex = 1;
             this.tbxInputDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbxInputDescription.ThemeAuthor = "Narwin";
             this.tbxInputDescription.ThemeName = "MetroLite";
@@ -353,7 +364,7 @@ namespace myWay.myForms
             this.tbxInputChemin.Size = new System.Drawing.Size(233, 26);
             this.tbxInputChemin.Style = MetroSet_UI.Enums.Style.Light;
             this.tbxInputChemin.StyleManager = null;
-            this.tbxInputChemin.TabIndex = 18;
+            this.tbxInputChemin.TabIndex = 2;
             this.tbxInputChemin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbxInputChemin.ThemeAuthor = "Narwin";
             this.tbxInputChemin.ThemeName = "MetroLite";
@@ -371,17 +382,6 @@ namespace myWay.myForms
             this.lblInputChemin.TabIndex = 17;
             this.lblInputChemin.Text = "Chemin :";
             this.lblInputChemin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(69, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 16);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "*";
             // 
             // ofd
             // 

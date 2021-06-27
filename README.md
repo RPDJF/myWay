@@ -18,6 +18,7 @@ Il est possible que dans les versions à venir l'application proposera une optio
 ## Current branch
 [ **Version 0.1.0 - 2021** ]
 Version bêta test
+**Download link :** https://github.com/RPDJF/myWay/releases/download/0.1.0/setup.msi
 
 [ **Version 1.0.0 - 2021** À venir ]
 Il s'agira de la première version officielle qui comprendra les fonctionnalités suivante :

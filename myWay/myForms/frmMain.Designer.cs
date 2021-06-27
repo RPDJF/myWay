@@ -48,6 +48,8 @@ namespace myWay
             this.lblSection = new System.Windows.Forms.Label();
             this.pnlLeftBorder = new System.Windows.Forms.Panel();
             this.btnOpenSection = new FontAwesome.Sharp.IconButton();
+            this.btnSettings = new FontAwesome.Sharp.IconButton();
+            this.btnLogo = new FontAwesome.Sharp.IconButton();
             this.pnlRaccourcisContent = new System.Windows.Forms.Panel();
             this.pnlRaccourcisTop = new System.Windows.Forms.Panel();
             this.btnAddRaccourcis = new FontAwesome.Sharp.IconButton();
@@ -278,10 +280,10 @@ namespace myWay
             this.btnAddSection.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnAddSection.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddSection.IconSize = 20;
-            this.btnAddSection.Location = new System.Drawing.Point(0, 13);
+            this.btnAddSection.Location = new System.Drawing.Point(0, 11);
             this.btnAddSection.Name = "btnAddSection";
             this.btnAddSection.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.btnAddSection.Size = new System.Drawing.Size(256, 38);
+            this.btnAddSection.Size = new System.Drawing.Size(256, 40);
             this.btnAddSection.TabIndex = 0;
             this.btnAddSection.Text = "Section";
             this.btnAddSection.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -313,8 +315,10 @@ namespace myWay
             // 
             // pnlLeftBorder
             // 
-            this.pnlLeftBorder.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.pnlLeftBorder.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.pnlLeftBorder.Controls.Add(this.btnOpenSection);
+            this.pnlLeftBorder.Controls.Add(this.btnSettings);
+            this.pnlLeftBorder.Controls.Add(this.btnLogo);
             this.pnlLeftBorder.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeftBorder.Location = new System.Drawing.Point(2, 2);
             this.pnlLeftBorder.Name = "pnlLeftBorder";
@@ -332,22 +336,58 @@ namespace myWay
             this.btnOpenSection.IconColor = System.Drawing.Color.Snow;
             this.btnOpenSection.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnOpenSection.IconSize = 25;
-            this.btnOpenSection.Location = new System.Drawing.Point(0, 0);
+            this.btnOpenSection.Location = new System.Drawing.Point(0, 40);
             this.btnOpenSection.Name = "btnOpenSection";
-            this.btnOpenSection.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.btnOpenSection.Size = new System.Drawing.Size(40, 446);
+            this.btnOpenSection.Size = new System.Drawing.Size(40, 366);
             this.btnOpenSection.TabIndex = 2;
             this.btnOpenSection.UseVisualStyleBackColor = false;
             this.btnOpenSection.Click += new System.EventHandler(this.btnIcon_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.IconChar = FontAwesome.Sharp.IconChar.Cogs;
+            this.btnSettings.IconColor = System.Drawing.Color.White;
+            this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSettings.IconSize = 30;
+            this.btnSettings.Location = new System.Drawing.Point(0, 406);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(40, 40);
+            this.btnSettings.TabIndex = 3;
+            this.btnSettings.UseVisualStyleBackColor = false;
+            // 
+            // btnLogo
+            // 
+            this.btnLogo.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnLogo.BackgroundImage = global::myWay.Properties.Resources.myWay;
+            this.btnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogo.FlatAppearance.BorderSize = 0;
+            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogo.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnLogo.IconColor = System.Drawing.Color.White;
+            this.btnLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogo.IconSize = 30;
+            this.btnLogo.Location = new System.Drawing.Point(0, 0);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnLogo.Size = new System.Drawing.Size(40, 40);
+            this.btnLogo.TabIndex = 4;
+            this.btnLogo.UseVisualStyleBackColor = false;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // pnlRaccourcisContent
             // 
             this.pnlRaccourcisContent.AutoScroll = true;
             this.pnlRaccourcisContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlRaccourcisContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRaccourcisContent.Location = new System.Drawing.Point(298, 124);
+            this.pnlRaccourcisContent.Location = new System.Drawing.Point(298, 126);
             this.pnlRaccourcisContent.Name = "pnlRaccourcisContent";
-            this.pnlRaccourcisContent.Size = new System.Drawing.Size(488, 324);
+            this.pnlRaccourcisContent.Size = new System.Drawing.Size(488, 322);
             this.pnlRaccourcisContent.TabIndex = 13;
             // 
             // pnlRaccourcisTop
@@ -357,7 +397,7 @@ namespace myWay
             this.pnlRaccourcisTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlRaccourcisTop.Location = new System.Drawing.Point(298, 86);
             this.pnlRaccourcisTop.Name = "pnlRaccourcisTop";
-            this.pnlRaccourcisTop.Size = new System.Drawing.Size(488, 38);
+            this.pnlRaccourcisTop.Size = new System.Drawing.Size(488, 40);
             this.pnlRaccourcisTop.TabIndex = 16;
             // 
             // btnAddRaccourcis
@@ -379,7 +419,7 @@ namespace myWay
             this.btnAddRaccourcis.Name = "btnAddRaccourcis";
             this.btnAddRaccourcis.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnAddRaccourcis.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAddRaccourcis.Size = new System.Drawing.Size(488, 38);
+            this.btnAddRaccourcis.Size = new System.Drawing.Size(488, 40);
             this.btnAddRaccourcis.TabIndex = 16;
             this.btnAddRaccourcis.Text = "Raccourci";
             this.btnAddRaccourcis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -431,7 +471,6 @@ namespace myWay
         private System.Windows.Forms.Label lblAppName;
         private System.Windows.Forms.Panel pnlAppTitle;
         private System.Windows.Forms.Panel pnlLeftBorder;
-        private FontAwesome.Sharp.IconButton btnOpenSection;
         private System.Windows.Forms.Label lblSection;
         private System.Windows.Forms.Panel pnlToolbar;
         private System.Windows.Forms.Panel pnlSearchBar;
@@ -443,6 +482,9 @@ namespace myWay
         private System.Windows.Forms.Panel pnlRaccourcisContent;
         private System.Windows.Forms.Panel pnlRaccourcisTop;
         private FontAwesome.Sharp.IconButton btnAddRaccourcis;
+        private FontAwesome.Sharp.IconButton btnOpenSection;
+        private FontAwesome.Sharp.IconButton btnSettings;
+        private FontAwesome.Sharp.IconButton btnLogo;
     }
 }
 

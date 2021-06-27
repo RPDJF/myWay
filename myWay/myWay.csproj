@@ -77,12 +77,19 @@
     <Compile Include="data\dataSections.cs" />
     <Compile Include="data\dataTemp.cs" />
     <Compile Include="data\dataSave.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="myClass\raccourcis.cs" />
     <Compile Include="myComponents\ucRaccourcis.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="myComponents\ucRaccourcis.Designer.cs">
       <DependentUpon>ucRaccourcis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForms\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="myForms\frmAskRaccourcis.cs">
       <SubType>Form</SubType>
@@ -112,6 +119,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="myComponents\ucRaccourcis.resx">
       <DependentUpon>ucRaccourcis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myForms\frmAskRaccourcis.resx">
       <DependentUpon>frmAskRaccourcis.cs</DependentUpon>
@@ -149,11 +159,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="myWay.ico" />
+    <None Include="Resources\myWay.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -94,7 +94,7 @@ namespace myWay.myForms
                     case "add":
                         dataTemp.selectedSection.addShortcut(tbxInputName.Text, tbxInputChemin.Text ,tbxInputDescription.Text);
                         saver.saveSections();
-                        frmMain.refreshContents();
+                        frmMain.RefreshContents();
                         break;
 
                     case "edit":
@@ -115,6 +115,11 @@ namespace myWay.myForms
             {
                 tbxInputChemin.Text = ofd.FileName;
             }
+        }
+
+        private void tbxInputName_Validating(object sender, CancelEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

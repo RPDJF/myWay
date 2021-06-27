@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using myWay.myComponents;
 using myWay.data;
+using myWay.myClass;
 
 namespace myWay
 {
     public partial class frmMain : Form
     {
         // vars
-        List<ucSections> listSections = data.dataSections.GetSections();
-        List<ucRaccourcis> listRaccourcis = new List<ucRaccourcis>();
+        public List<ucSections> listSections = dataSections.GetSections();
         // WINDOW DRAG VAR
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -33,7 +33,7 @@ namespace myWay
             InitializeComponent();
         }
         // Generate - Refresh component in panels
-        public Panel setComponentToPanel(Panel inputPanel, List<ucSections> sectionsList)
+        public Panel SetComponentToPanel(Panel inputPanel, List<ucSections> sectionsList)
         {
             Panel outputPanel = inputPanel;
             outputPanel.Controls.Clear(); // clear actual shown sections
@@ -49,14 +49,16 @@ namespace myWay
             outputPanel.Controls.AddRange(aSections);
             return outputPanel; // return the new panel
         }
-        public Panel setComponentToPanel(Panel inputPanel, List<myClass.raccourcis> classRacourcis)
+        public Panel SetComponentToPanel(Panel inputPanel, List<raccourcis> classRacourcis)
         {
             Panel outputPanel = inputPanel;
             List<ucRaccourcis> listRaccourcis = new List<ucRaccourcis>();
-            foreach(myClass.raccourcis myRaccourcis in dataTemp.selectedSection.getRaccourcis())
+            foreach(raccourcis myRaccourcis in dataTemp.selectedSection.getRaccourcis())
             {
-                ucRaccourcis myUcRaccourcis = new ucRaccourcis(myRaccourcis);
-                myUcRaccourcis.Dock = DockStyle.Top;
+                ucRaccourcis myUcRaccourcis = new ucRaccourcis(myRaccourcis)
+                {
+                    Dock = DockStyle.Top
+                };
                 listRaccourcis.Add(myUcRaccourcis);
             }
             outputPanel.Controls.Clear(); // clear actual shown sections
@@ -65,10 +67,10 @@ namespace myWay
             outputPanel.Controls.AddRange(aRaccourcis);
             return outputPanel; // return the new panel
         }
-        public void refreshContents()
+        public void RefreshContents()
         {
-            setComponentToPanel(pnlSectionContent, dataSections.GetSections());
-            if(dataTemp.selectedSection != null) setComponentToPanel(pnlRaccourcisContent, dataTemp.selectedSection.getRaccourcis());
+            SetComponentToPanel(pnlSectionContent, dataSections.GetSections());
+            if(dataTemp.selectedSection != null) SetComponentToPanel(pnlRaccourcisContent, dataTemp.selectedSection.getRaccourcis());
             if(data.dataTemp.selectedSection != null)
             {
                 lblCollection.Text = data.dataTemp.selectedSection.getName();
@@ -96,6 +98,7 @@ namespace myWay
                     OnPaint(null);
                     break;
                 case FormWindowState.Normal:
+                    this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                     this.WindowState = FormWindowState.Maximized;
                     break;
                 default:
@@ -147,7 +150,7 @@ namespace myWay
             {
                 if (mySection.getName().ToLower().Contains(searchFilter)) filteredSections.Add(mySection); // add results to filtered list
             }
-            pnlSectionContent = setComponentToPanel(pnlSectionContent, filteredSections); // show filtered list
+            pnlSectionContent = SetComponentToPanel(pnlSectionContent, filteredSections); // show filtered list
 
         }
         private void mtbxSectionSearch_TextChanged(object sender, EventArgs e)
@@ -157,7 +160,7 @@ namespace myWay
         private void btnAddSection_Click(object sender, EventArgs e)
         {
             myForms.frmAskTextInput askName = new myForms.frmAskTextInput("add");
-            askName.FormClosed += (s, ex) => {refreshContents(); /*data.dataSave saver = new dataSave();saver.saveSections();*/ };
+            askName.FormClosed += (s, ex) => {RefreshContents(); /*data.dataSave saver = new dataSave();saver.saveSections();*/ };
             askName.ShowDialog();
         }
 
@@ -174,20 +177,27 @@ namespace myWay
             if (dataTemp.selectedSection != null)
             {
                 myForms.frmAskRaccourcis frmAskRaccourcis = new myForms.frmAskRaccourcis("add");
-                frmAskRaccourcis.FormClosed += (s, ex) => { refreshContents(); /*data.dataSave saver = new dataSave(); saver.saveSections();*/ };
+                frmAskRaccourcis.FormClosed += (s, ex) => { RefreshContents(); /*data.dataSave saver = new dataSave(); saver.saveSections();*/ };
                 frmAskRaccourcis.ShowDialog();
             }
         }
         private void lblCollection_TextChanged(object sender, EventArgs e)
         {
-            setComponentToPanel(pnlRaccourcisContent,dataTemp.selectedSection.getRaccourcis());
+            SetComponentToPanel(pnlRaccourcisContent,dataTemp.selectedSection.getRaccourcis());
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             dataSave saver = new dataSave();
             saver.importData();
-            refreshContents();
+            RefreshContents();
+        }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            // show about frame
+            myForms.frmAbout about = new myForms.frmAbout();
+            about.ShowDialog();
         }
         // END - CONTROLS EVENTS
     }

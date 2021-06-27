@@ -97,7 +97,6 @@ namespace myWay.myForms
                         saver.saveSections();
                         break;
                 }
-                
                 this.Close();
             }
         }
@@ -121,6 +120,11 @@ namespace myWay.myForms
             {
                 btnConfirm_Click(sender, e);
             }
+        }
+
+        private void btnCancelClick(object sender, EventArgs e)
+        {
+
         }
         // END - Control events
     }

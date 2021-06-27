@@ -37,10 +37,10 @@ namespace myWay.myForms
             this.tbxInput = new MetroSet_UI.Controls.MetroSetTextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.pnlTopBar = new System.Windows.Forms.Panel();
-            this.btnCancel = new MetroSet_UI.Controls.MetroSetButton();
-            this.btnConfirm = new MetroSet_UI.Controls.MetroSetButton();
+            this.btnConfirm = new FontAwesome.Sharp.IconButton();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.lblRequired = new System.Windows.Forms.Label();
+            this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.pnlAppTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.pnlTopBar.SuspendLayout();
@@ -142,7 +142,6 @@ namespace myWay.myForms
             this.tbxInput.ThemeName = "MetroLite";
             this.tbxInput.UseSystemPasswordChar = false;
             this.tbxInput.WatermarkText = "exemple";
-            this.tbxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxInput_KeyDown);
             // 
             // iconPictureBox1
             // 
@@ -169,58 +168,23 @@ namespace myWay.myForms
             this.pnlTopBar.Size = new System.Drawing.Size(364, 39);
             this.pnlTopBar.TabIndex = 16;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnCancel.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnCancel.DisabledForeColor = System.Drawing.Color.Gray;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCancel.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.btnCancel.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.btnCancel.HoverTextColor = System.Drawing.Color.White;
-            this.btnCancel.IsDerivedStyle = true;
-            this.btnCancel.Location = new System.Drawing.Point(284, 7);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnCancel.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnCancel.NormalTextColor = System.Drawing.Color.White;
-            this.btnCancel.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.btnCancel.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.btnCancel.PressTextColor = System.Drawing.Color.White;
-            this.btnCancel.Size = new System.Drawing.Size(75, 25);
-            this.btnCancel.Style = MetroSet_UI.Enums.Style.Light;
-            this.btnCancel.StyleManager = null;
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Annuler";
-            this.btnCancel.ThemeAuthor = "Narwin";
-            this.btnCancel.ThemeName = "MetroLite";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnConfirm
             // 
-            this.btnConfirm.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnConfirm.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnConfirm.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnConfirm.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.btnConfirm.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.btnConfirm.HoverTextColor = System.Drawing.Color.White;
-            this.btnConfirm.IsDerivedStyle = true;
-            this.btnConfirm.Location = new System.Drawing.Point(204, 7);
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnConfirm.IconColor = System.Drawing.Color.Black;
+            this.btnConfirm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConfirm.Location = new System.Drawing.Point(195, 7);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnConfirm.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnConfirm.NormalTextColor = System.Drawing.Color.White;
-            this.btnConfirm.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.btnConfirm.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.btnConfirm.PressTextColor = System.Drawing.Color.White;
-            this.btnConfirm.Size = new System.Drawing.Size(75, 25);
-            this.btnConfirm.Style = MetroSet_UI.Enums.Style.Light;
-            this.btnConfirm.StyleManager = null;
-            this.btnConfirm.TabIndex = 0;
+            this.btnConfirm.Size = new System.Drawing.Size(80, 25);
+            this.btnConfirm.TabIndex = 22;
             this.btnConfirm.Text = "Confirmer";
-            this.btnConfirm.ThemeAuthor = "Narwin";
-            this.btnConfirm.ThemeName = "MetroLite";
+            this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // pnlContent
@@ -249,17 +213,39 @@ namespace myWay.myForms
             this.lblRequired.TabIndex = 23;
             this.lblRequired.Text = "*";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCancel.IconColor = System.Drawing.Color.Black;
+            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancel.Location = new System.Drawing.Point(281, 7);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 25);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Annuler";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancelClick);
+            // 
             // frmAskTextInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(368, 169);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlAppTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAskTextInput";
             this.Padding = new System.Windows.Forms.Padding(2);
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAskTextInput";
             this.pnlAppTopBar.ResumeLayout(false);
@@ -282,9 +268,9 @@ namespace myWay.myForms
         private MetroSet_UI.Controls.MetroSetTextBox tbxInput;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Panel pnlTopBar;
-        private MetroSet_UI.Controls.MetroSetButton btnCancel;
-        private MetroSet_UI.Controls.MetroSetButton btnConfirm;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Label lblRequired;
+        private FontAwesome.Sharp.IconButton btnConfirm;
+        private FontAwesome.Sharp.IconButton btnCancel;
     }
 }

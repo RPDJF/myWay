@@ -231,7 +231,7 @@ namespace myWay.myForms
             this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancelClick);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmAskTextInput
             // 

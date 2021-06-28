@@ -359,6 +359,7 @@ namespace myWay
             this.btnSettings.Size = new System.Drawing.Size(40, 40);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnLogo
             // 

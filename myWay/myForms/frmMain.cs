@@ -199,6 +199,12 @@ namespace myWay
             myForms.frmAbout about = new myForms.frmAbout();
             about.ShowDialog();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            myForms.frmSettings settings = new myForms.frmSettings();
+            settings.ShowDialog();
+        }
         // END - CONTROLS EVENTS
     }
 }

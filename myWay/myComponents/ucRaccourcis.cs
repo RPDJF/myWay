@@ -40,7 +40,15 @@ namespace myWay.myComponents
         // Refresh component
         public void refresh()
         {
-            btnBody.Text = contextRaccourcis.getName() + " - " + contextRaccourcis.getDescription();
+            if(contextRaccourcis.getDescription() == "" || contextRaccourcis.getDescription() == null)
+            {
+                btnBody.Text = contextRaccourcis.getName();
+            }
+            else
+            {
+                btnBody.Text = contextRaccourcis.getName() + " - " + contextRaccourcis.getDescription();
+            }
+            
         }
         // END - Refresh component
         // Display toolbox

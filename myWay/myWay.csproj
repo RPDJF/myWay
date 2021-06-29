@@ -121,6 +121,12 @@
     <Compile Include="myForms\frmSettings.Designer.cs">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="myForms\frmSettingsChilds\Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\frmSettingsChilds\Data.Designer.cs">
+      <DependentUpon>Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="myForms\frmSettingsChilds\General.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="myForms\frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\frmSettingsChilds\Data.resx">
+      <DependentUpon>Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myForms\frmSettingsChilds\General.resx">
       <DependentUpon>General.cs</DependentUpon>

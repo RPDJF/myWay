@@ -91,6 +91,40 @@ namespace myWay.data
                 MessageBox.Show("Les données que vous essayez d'importer sont illisibles !", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void importOldData(String filePath, ucSections section)
+        {
+            FileStream myFileStream = new FileStream(filePath, FileMode.Open);
+            StreamReader myStreamReader = new StreamReader(myFileStream, ASCIIEncoding.Default);
+            int iteration = 1;
+            String sLine = myStreamReader.ReadLine();
+            String sName = null;
+            String sPath = null;
+            String sDesc = null;
+            while (sLine != null)
+            {
+                switch (iteration)
+                {
+                    case 1:
+                        sName = sLine;
+                        break;
+                    case 2:
+                        sPath = sLine;
+                        break;
+                    case 3:
+                        sDesc = sLine;
+                        section.addShortcut(sName, sPath, sDesc);
+                        iteration = 0;
+                        break;
+                    default:
+                        break;
+                }
+                sLine = myStreamReader.ReadLine();
+                iteration++;
+            }
+            myStreamReader.Close();
+            myFileStream.Close();
+            saveSections();
+        }
         // END - Import sections and their shortcuts
         // Initialize directories
         public void initializeDirectories()

@@ -47,5 +47,14 @@ namespace myWay.data
             return false;
         }
         // END - Check if section already exist
+        // Get section by name
+        public static ucSections GetSectionByName(String name)
+        {
+            foreach(ucSections section in listSections)
+            {
+                if (name == section.getName()) return section;
+            }
+            return null;
+        }
     }
 }

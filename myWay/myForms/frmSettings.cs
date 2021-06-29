@@ -42,6 +42,15 @@ namespace myWay.myForms
             pnlFrame.Controls.Add(child);
             child.Show();
         }
+
+        private void btnDonnées_Click(object sender, EventArgs e)
+        {
+            child.Close();
+            child = new frmSettingsChilds.Data();
+            child.TopLevel = false;
+            pnlFrame.Controls.Add(child);
+            child.Show();
+        }
         // END - Controls events
     }
 }

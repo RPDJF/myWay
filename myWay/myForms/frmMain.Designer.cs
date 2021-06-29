@@ -386,19 +386,19 @@ namespace myWay
             this.pnlRaccourcisContent.AutoScroll = true;
             this.pnlRaccourcisContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlRaccourcisContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRaccourcisContent.Location = new System.Drawing.Point(298, 126);
+            this.pnlRaccourcisContent.Location = new System.Drawing.Point(298, 130);
             this.pnlRaccourcisContent.Name = "pnlRaccourcisContent";
-            this.pnlRaccourcisContent.Size = new System.Drawing.Size(488, 322);
+            this.pnlRaccourcisContent.Size = new System.Drawing.Size(488, 318);
             this.pnlRaccourcisContent.TabIndex = 13;
             // 
             // pnlRaccourcisTop
             // 
-            this.pnlRaccourcisTop.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.pnlRaccourcisTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlRaccourcisTop.Controls.Add(this.btnAddRaccourcis);
             this.pnlRaccourcisTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlRaccourcisTop.Location = new System.Drawing.Point(298, 86);
             this.pnlRaccourcisTop.Name = "pnlRaccourcisTop";
-            this.pnlRaccourcisTop.Size = new System.Drawing.Size(488, 40);
+            this.pnlRaccourcisTop.Size = new System.Drawing.Size(488, 44);
             this.pnlRaccourcisTop.TabIndex = 16;
             // 
             // btnAddRaccourcis

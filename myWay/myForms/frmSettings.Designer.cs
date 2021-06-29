@@ -168,6 +168,7 @@ namespace myWay.myForms
             this.btnDonnées.TabIndex = 22;
             this.btnDonnées.Text = "Données";
             this.btnDonnées.UseVisualStyleBackColor = false;
+            this.btnDonnées.Click += new System.EventHandler(this.btnDonnées_Click);
             // 
             // btnGeneral
             // 

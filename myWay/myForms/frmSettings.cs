@@ -39,15 +39,41 @@ namespace myWay.myForms
             child.Close();
             child = new frmSettingsChilds.General();
             child.TopLevel = false;
+            pnlFrame.Controls.Clear();
             pnlFrame.Controls.Add(child);
             child.Show();
         }
 
-        private void btnDonnées_Click(object sender, EventArgs e)
+        private void frmSettings_Load(object sender, EventArgs e)
+        {
+            pnlFrame.HorizontalScroll.Maximum = 0;
+            pnlFrame.AutoScroll = false;
+            pnlFrame.VerticalScroll.Visible = false;
+            pnlFrame.AutoScroll = true;
+        }
+
+        private void btnDonnees_Click(object sender, EventArgs e)
+        {
+            if (pnlDonnees.Visible) pnlDonnees.Visible = false;
+            else pnlDonnees.Visible = true;
+        }
+
+        private void btnDonneesImport_Click(object sender, EventArgs e)
         {
             child.Close();
-            child = new frmSettingsChilds.Data();
+            child = new frmSettingsChilds.DataImport();
             child.TopLevel = false;
+            pnlFrame.Controls.Clear();
+            pnlFrame.Controls.Add(child);
+            child.Show();
+        }
+
+        private void btnDonneesExport_Click(object sender, EventArgs e)
+        {
+            child.Close();
+            child = new frmSettingsChilds.DataExport();
+            child.TopLevel = false;
+            pnlFrame.Controls.Clear();
             pnlFrame.Controls.Add(child);
             child.Show();
         }

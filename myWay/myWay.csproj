@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\dataChecker.cs" />
     <Compile Include="data\dataSections.cs" />
     <Compile Include="data\dataTemp.cs" />
     <Compile Include="data\dataSave.cs" />
@@ -130,11 +131,17 @@
     <Compile Include="myForms\frmSettings.Designer.cs">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="myForms\frmSettingsChilds\Data.cs">
+    <Compile Include="myForms\frmSettingsChilds\DataImport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="myForms\frmSettingsChilds\Data.Designer.cs">
-      <DependentUpon>Data.cs</DependentUpon>
+    <Compile Include="myForms\frmSettingsChilds\DataImport.Designer.cs">
+      <DependentUpon>DataImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForms\frmSettingsChilds\DataExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\frmSettingsChilds\DataExport.Designer.cs">
+      <DependentUpon>DataExport.cs</DependentUpon>
     </Compile>
     <Compile Include="myForms\frmSettingsChilds\General.cs">
       <SubType>Form</SubType>
@@ -165,8 +172,11 @@
     <EmbeddedResource Include="myForms\frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="myForms\frmSettingsChilds\Data.resx">
-      <DependentUpon>Data.cs</DependentUpon>
+    <EmbeddedResource Include="myForms\frmSettingsChilds\DataExport.resx">
+      <DependentUpon>DataExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\frmSettingsChilds\DataImport.resx">
+      <DependentUpon>DataImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myForms\frmSettingsChilds\General.resx">
       <DependentUpon>General.cs</DependentUpon>

@@ -90,6 +90,7 @@ namespace myWay.data
             {
                 MessageBox.Show("Les données que vous essayez d'importer sont illisibles !", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            saveSections();
         }
         public void importOldData(String filePath, ucSections section)
         {

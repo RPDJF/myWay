@@ -68,20 +68,8 @@ namespace myWay.myForms
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Char[] testChar = tbxInput.Text.ToCharArray();
-            if (data.dataSections.sectionExists(new myComponents.ucSections(tbxInput.Text)))
-            {
-                MessageBox.Show("Impossible !\nUne séction du même nom existe déjà","ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if(tbxInput.Text == null || tbxInput.Text == "")
-            {
-                MessageBox.Show("Impossible !\nLe champ est requis", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if(testChar[0] == ' ' || testChar[testChar.Length-1] == ' ')
-            {
-                MessageBox.Show("Impossible !\nLa fin et le début ne doivent pas contenir d'espaces","ERREUR", MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
-            else
+            dataChecker check = new dataChecker();
+            if(check.validateSectionName(tbxInput.Text))
             {
                 dataSave saver = new dataSave();
                 switch (inputType)

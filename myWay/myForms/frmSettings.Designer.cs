@@ -43,20 +43,20 @@ namespace myWay.myForms
             this.btnDonneesExport = new FontAwesome.Sharp.IconButton();
             this.btnDonneesImport = new FontAwesome.Sharp.IconButton();
             this.btnDonnees = new FontAwesome.Sharp.IconButton();
-            this.btnGeneral = new FontAwesome.Sharp.IconButton();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.pnlFrame = new System.Windows.Forms.Panel();
             this.pnlGeneral = new System.Windows.Forms.Panel();
             this.btnGeneralProfile = new FontAwesome.Sharp.IconButton();
             this.btnGeneralAffichage = new FontAwesome.Sharp.IconButton();
+            this.btnGeneral = new FontAwesome.Sharp.IconButton();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.pnlFrame = new System.Windows.Forms.Panel();
             this.pnlAppTopBar.SuspendLayout();
             this.pnlTopBar.SuspendLayout();
             this.pnlTopSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.pnlSettingsCategorie.SuspendLayout();
             this.pnlDonnees.SuspendLayout();
-            this.pnlContent.SuspendLayout();
             this.pnlGeneral.SuspendLayout();
+            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // ofd
@@ -262,51 +262,6 @@ namespace myWay.myForms
             this.btnDonnees.UseVisualStyleBackColor = false;
             this.btnDonnees.Click += new System.EventHandler(this.btnDonnees_Click);
             // 
-            // btnGeneral
-            // 
-            this.btnGeneral.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnGeneral.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGeneral.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGeneral.FlatAppearance.BorderSize = 0;
-            this.btnGeneral.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
-            this.btnGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnGeneral.ForeColor = System.Drawing.Color.White;
-            this.btnGeneral.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnGeneral.IconColor = System.Drawing.Color.Black;
-            this.btnGeneral.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGeneral.Location = new System.Drawing.Point(0, 0);
-            this.btnGeneral.Name = "btnGeneral";
-            this.btnGeneral.Size = new System.Drawing.Size(190, 44);
-            this.btnGeneral.TabIndex = 21;
-            this.btnGeneral.Text = "Général";
-            this.btnGeneral.UseVisualStyleBackColor = false;
-            this.btnGeneral.Click += new System.EventHandler(this.btnGeneral_Click);
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pnlContent.Controls.Add(this.pnlFrame);
-            this.pnlContent.Controls.Add(this.pnlSettingsCategorie);
-            this.pnlContent.Controls.Add(this.pnlTopSettings);
-            this.pnlContent.Controls.Add(this.pnlTopBar);
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.pnlContent.Location = new System.Drawing.Point(2, 30);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(614, 324);
-            this.pnlContent.TabIndex = 15;
-            // 
-            // pnlFrame
-            // 
-            this.pnlFrame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pnlFrame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFrame.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.pnlFrame.Location = new System.Drawing.Point(190, 58);
-            this.pnlFrame.Name = "pnlFrame";
-            this.pnlFrame.Size = new System.Drawing.Size(424, 227);
-            this.pnlFrame.TabIndex = 26;
-            // 
             // pnlGeneral
             // 
             this.pnlGeneral.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -361,6 +316,52 @@ namespace myWay.myForms
             this.btnGeneralAffichage.TabIndex = 24;
             this.btnGeneralAffichage.Text = "affichage";
             this.btnGeneralAffichage.UseVisualStyleBackColor = false;
+            this.btnGeneralAffichage.Click += new System.EventHandler(this.btnGeneralAffichage_Click);
+            // 
+            // btnGeneral
+            // 
+            this.btnGeneral.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnGeneral.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGeneral.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGeneral.FlatAppearance.BorderSize = 0;
+            this.btnGeneral.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
+            this.btnGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnGeneral.ForeColor = System.Drawing.Color.White;
+            this.btnGeneral.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGeneral.IconColor = System.Drawing.Color.Black;
+            this.btnGeneral.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGeneral.Location = new System.Drawing.Point(0, 0);
+            this.btnGeneral.Name = "btnGeneral";
+            this.btnGeneral.Size = new System.Drawing.Size(190, 44);
+            this.btnGeneral.TabIndex = 21;
+            this.btnGeneral.Text = "Général";
+            this.btnGeneral.UseVisualStyleBackColor = false;
+            this.btnGeneral.Click += new System.EventHandler(this.btnGeneral_Click);
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlContent.Controls.Add(this.pnlFrame);
+            this.pnlContent.Controls.Add(this.pnlSettingsCategorie);
+            this.pnlContent.Controls.Add(this.pnlTopSettings);
+            this.pnlContent.Controls.Add(this.pnlTopBar);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.pnlContent.Location = new System.Drawing.Point(2, 30);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(614, 324);
+            this.pnlContent.TabIndex = 15;
+            // 
+            // pnlFrame
+            // 
+            this.pnlFrame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFrame.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.pnlFrame.Location = new System.Drawing.Point(190, 58);
+            this.pnlFrame.Name = "pnlFrame";
+            this.pnlFrame.Size = new System.Drawing.Size(424, 227);
+            this.pnlFrame.TabIndex = 26;
             // 
             // frmSettings
             // 
@@ -375,6 +376,7 @@ namespace myWay.myForms
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmSettings";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmSettings_Load);
             this.pnlAppTopBar.ResumeLayout(false);
             this.pnlAppTopBar.PerformLayout();
@@ -384,8 +386,8 @@ namespace myWay.myForms
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.pnlSettingsCategorie.ResumeLayout(false);
             this.pnlDonnees.ResumeLayout(false);
-            this.pnlContent.ResumeLayout(false);
             this.pnlGeneral.ResumeLayout(false);
+            this.pnlContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

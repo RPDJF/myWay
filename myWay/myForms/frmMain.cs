@@ -75,6 +75,7 @@ namespace myWay
             {
                 lblCollection.Text = data.dataTemp.selectedSection.getName();
             }
+            this.TopMost = dataTemp.alwaysOnTop;
             return;
         }
         // END - Generate - Refresh component in panels
@@ -95,15 +96,12 @@ namespace myWay
             switch(this.WindowState){
                 case FormWindowState.Maximized:
                     this.WindowState = FormWindowState.Normal;
-                    OnPaint(null);
                     break;
                 case FormWindowState.Normal:
-                    this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                     this.WindowState = FormWindowState.Maximized;
                     break;
                 default:
                     this.WindowState = FormWindowState.Normal;
-                    OnPaint(null);
                     break;
             }
         }
@@ -151,7 +149,6 @@ namespace myWay
                 if (mySection.getName().ToLower().Contains(searchFilter)) filteredSections.Add(mySection); // add results to filtered list
             }
             pnlSectionContent = SetComponentToPanel(pnlSectionContent, filteredSections); // show filtered list
-
         }
         private void mtbxSectionSearch_TextChanged(object sender, EventArgs e)
         {
@@ -203,7 +200,12 @@ namespace myWay
         private void btnSettings_Click(object sender, EventArgs e)
         {
             myForms.frmSettings settings = new myForms.frmSettings();
-            settings.ShowDialog();
+            if(settings.ShowDialog() == DialogResult.OK)
+            {
+                RefreshContents();
+                dataSave saver = new dataSave();
+                saver.saveSettings();
+            }
         }
         // END - CONTROLS EVENTS
     }

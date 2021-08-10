@@ -21,6 +21,7 @@ namespace myWay.myForms
         // Controls events
         private void btnClose_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -68,6 +69,16 @@ namespace myWay.myForms
         {
             child.Close();
             child = new frmSettingsChilds.DataExport();
+            child.TopLevel = false;
+            pnlFrame.Controls.Clear();
+            pnlFrame.Controls.Add(child);
+            child.Show();
+        }
+
+        private void btnGeneralAffichage_Click(object sender, EventArgs e)
+        {
+            child.Close();
+            child = new frmSettingsChilds.GeneralAffichage();
             child.TopLevel = false;
             pnlFrame.Controls.Clear();
             pnlFrame.Controls.Add(child);

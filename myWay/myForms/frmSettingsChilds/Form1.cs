@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace myWay.myForms.frmSettingsChilds
 {
-    public partial class General : Form
+    public partial class Form1 : Form
     {
-        public General()
+        public Form1()
         {
             InitializeComponent();
         }

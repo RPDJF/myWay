@@ -11,5 +11,8 @@ namespace myWay.data
     {
         // data
         public static ucSections selectedSection;
+        public static String profilName;
+        public static Boolean alwaysOnTop = false;
+        public static Boolean classicalWindowsForm = false;
     }
 }

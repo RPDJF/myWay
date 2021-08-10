@@ -37,10 +37,10 @@ namespace myWay.myForms
             this.tbxInput = new MetroSet_UI.Controls.MetroSetTextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.pnlTopBar = new System.Windows.Forms.Panel();
+            this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.btnConfirm = new FontAwesome.Sharp.IconButton();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.lblRequired = new System.Windows.Forms.Label();
-            this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.pnlAppTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.pnlTopBar.SuspendLayout();
@@ -168,6 +168,26 @@ namespace myWay.myForms
             this.pnlTopBar.Size = new System.Drawing.Size(364, 39);
             this.pnlTopBar.TabIndex = 16;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCancel.IconColor = System.Drawing.Color.Black;
+            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancel.Location = new System.Drawing.Point(281, 7);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 25);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Annuler";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -213,26 +233,6 @@ namespace myWay.myForms
             this.lblRequired.TabIndex = 23;
             this.lblRequired.Text = "*";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnCancel.IconColor = System.Drawing.Color.Black;
-            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancel.Location = new System.Drawing.Point(281, 7);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 25);
-            this.btnCancel.TabIndex = 23;
-            this.btnCancel.Text = "Annuler";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // frmAskTextInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +248,7 @@ namespace myWay.myForms
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAskTextInput";
+            this.TopMost = true;
             this.pnlAppTopBar.ResumeLayout(false);
             this.pnlAppTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

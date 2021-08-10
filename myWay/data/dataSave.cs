@@ -17,6 +17,7 @@ namespace myWay.data
     {
         // var
         private String savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\myWay\profiles\";
+        private String settingsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\myWay\settings.xml";
         private const String saveFilename = "default_profil.xml";
         // Save sections and their shortcuts
         public void saveSections()
@@ -84,6 +85,22 @@ namespace myWay.data
                         mySection.addShortcut(raccourcis.Element("name").Value, raccourcis.Element("path").Value, raccourcis.Element("description").Value);
                     }
                 }
+                try
+                {
+                    foreach (XElement setting in XElement.Load(settingsPath).Elements())
+                    {
+                        foreach (XElement categorie in setting.Elements())
+                        {
+                            dataTemp.alwaysOnTop = Convert.ToBoolean(categorie.Element("alwaysontop").Value);
+                            dataTemp.classicalWindowsForm = Convert.ToBoolean(categorie.Element("classicalwindowsform").Value);
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    saveSettings();
+                    Console.WriteLine(ex);
+                }
             }
             catch
             {
@@ -94,6 +111,7 @@ namespace myWay.data
                     writer.WriteEndElement();
                     writer.Flush();
                 }
+                saveSettings();
             }
         }
         public void importData(String filePath)
@@ -164,6 +182,22 @@ namespace myWay.data
             saveSections();
         }
         // END - Import sections and their shortcuts
+        // Save Settings
+        public void saveSettings()
+        {
+            using (XmlWriter writer = XmlWriter.Create(settingsPath))
+            {
+                writer.WriteStartElement("Settings");
+                writer.WriteStartElement("general");
+                writer.WriteStartElement("display");
+                writer.WriteElementString("alwaysontop", dataTemp.alwaysOnTop.ToString());
+                writer.WriteElementString("classicalwindowsform", dataTemp.classicalWindowsForm.ToString());
+                writer.WriteEndElement();
+                writer.WriteEndElement();
+                writer.WriteEndElement();
+            }
+        }
+        // END - Save Settings
         // Initialize directories
         public void initializeDirectories()
         {
@@ -173,6 +207,5 @@ namespace myWay.data
             }
         }
         // END - Initialize directories
-       
     }
 }

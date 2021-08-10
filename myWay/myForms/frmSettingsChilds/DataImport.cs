@@ -17,10 +17,10 @@ namespace myWay.myForms.frmSettingsChilds
         public DataImport()
         {
             InitializeComponent();
-            foreach(myComponents.ucSections section in data.dataSections.GetSections())
+            lblNew.Text = "v" + Application.ProductVersion + " et antérieur";
+            foreach (myComponents.ucSections section in data.dataSections.GetSections())
             {
                 cbxSections.Items.Add(section.getName());
-                lblNew.Text = "v" + Application.ProductVersion + " et antérieur";
             }
         }
 

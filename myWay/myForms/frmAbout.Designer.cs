@@ -66,6 +66,7 @@ namespace myWay.myForms
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -209,6 +210,7 @@ namespace myWay.myForms
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAbout";
+            this.TopMost = true;
             this.pnlTopBar.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();

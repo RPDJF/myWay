@@ -109,6 +109,7 @@ namespace myWay.myComponents
             this.btnBody.IconSize = 20;
             this.btnBody.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBody.Location = new System.Drawing.Point(4, 0);
+            this.btnBody.Margin = new System.Windows.Forms.Padding(0);
             this.btnBody.Name = "btnBody";
             this.btnBody.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBody.Size = new System.Drawing.Size(484, 36);

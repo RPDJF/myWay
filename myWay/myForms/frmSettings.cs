@@ -36,12 +36,8 @@ namespace myWay.myForms
 
         private void btnGeneral_Click(object sender, EventArgs e)
         {
-            child.Close();
-            child = new frmSettingsChilds.General();
-            child.TopLevel = false;
-            pnlFrame.Controls.Clear();
-            pnlFrame.Controls.Add(child);
-            child.Show();
+            if (pnlGeneral.Visible) pnlGeneral.Visible = false;
+            else pnlGeneral.Visible = true;
         }
 
         private void frmSettings_Load(object sender, EventArgs e)

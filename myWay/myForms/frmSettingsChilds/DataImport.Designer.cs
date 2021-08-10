@@ -31,7 +31,7 @@ namespace myWay.myForms.frmSettingsChilds
         {
             this.grpMyWay2021 = new System.Windows.Forms.GroupBox();
             this.btnChooseFileActual = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblNew = new System.Windows.Forms.Label();
             this.grpOldMyWay = new System.Windows.Forms.GroupBox();
             this.btnChooseFile = new FontAwesome.Sharp.IconButton();
             this.lblOldNewSection = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@ namespace myWay.myForms.frmSettingsChilds
             // grpMyWay2021
             // 
             this.grpMyWay2021.Controls.Add(this.btnChooseFileActual);
-            this.grpMyWay2021.Controls.Add(this.label2);
+            this.grpMyWay2021.Controls.Add(this.lblNew);
             this.grpMyWay2021.Location = new System.Drawing.Point(12, 12);
             this.grpMyWay2021.Name = "grpMyWay2021";
             this.grpMyWay2021.Size = new System.Drawing.Size(378, 100);
@@ -73,13 +73,13 @@ namespace myWay.myForms.frmSettingsChilds
             this.btnChooseFileActual.UseVisualStyleBackColor = false;
             this.btnChooseFileActual.Click += new System.EventHandler(this.btnChooseFileActual_Click);
             // 
-            // label2
+            // lblNew
             // 
-            this.label2.Location = new System.Drawing.Point(15, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 16);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "%actualVersion% et antérieur :";
+            this.lblNew.Location = new System.Drawing.Point(15, 25);
+            this.lblNew.Name = "lblNew";
+            this.lblNew.Size = new System.Drawing.Size(207, 16);
+            this.lblNew.TabIndex = 24;
+            this.lblNew.Text = "%actualVersion% et antérieur :";
             // 
             // grpOldMyWay
             // 
@@ -173,7 +173,7 @@ namespace myWay.myForms.frmSettingsChilds
         private System.Windows.Forms.ComboBox cbxSections;
         private System.Windows.Forms.GroupBox grpMyWay2021;
         private FontAwesome.Sharp.IconButton btnChooseFileActual;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNew;
         private System.Windows.Forms.GroupBox grpOldMyWay;
         private System.Windows.Forms.Label lblOldNewSection;
         private System.Windows.Forms.OpenFileDialog ofdNew;

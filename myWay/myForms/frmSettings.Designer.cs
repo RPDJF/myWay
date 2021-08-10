@@ -46,6 +46,9 @@ namespace myWay.myForms
             this.btnGeneral = new FontAwesome.Sharp.IconButton();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlFrame = new System.Windows.Forms.Panel();
+            this.pnlGeneral = new System.Windows.Forms.Panel();
+            this.btnGeneralProfile = new FontAwesome.Sharp.IconButton();
+            this.btnGeneralAffichage = new FontAwesome.Sharp.IconButton();
             this.pnlAppTopBar.SuspendLayout();
             this.pnlTopBar.SuspendLayout();
             this.pnlTopSettings.SuspendLayout();
@@ -53,6 +56,7 @@ namespace myWay.myForms
             this.pnlSettingsCategorie.SuspendLayout();
             this.pnlDonnees.SuspendLayout();
             this.pnlContent.SuspendLayout();
+            this.pnlGeneral.SuspendLayout();
             this.SuspendLayout();
             // 
             // ofd
@@ -171,6 +175,7 @@ namespace myWay.myForms
             this.pnlSettingsCategorie.BackColor = System.Drawing.Color.SlateBlue;
             this.pnlSettingsCategorie.Controls.Add(this.pnlDonnees);
             this.pnlSettingsCategorie.Controls.Add(this.btnDonnees);
+            this.pnlSettingsCategorie.Controls.Add(this.pnlGeneral);
             this.pnlSettingsCategorie.Controls.Add(this.btnGeneral);
             this.pnlSettingsCategorie.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSettingsCategorie.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
@@ -187,7 +192,7 @@ namespace myWay.myForms
             this.pnlDonnees.Controls.Add(this.btnDonneesImport);
             this.pnlDonnees.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDonnees.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.pnlDonnees.Location = new System.Drawing.Point(0, 88);
+            this.pnlDonnees.Location = new System.Drawing.Point(0, 148);
             this.pnlDonnees.Name = "pnlDonnees";
             this.pnlDonnees.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pnlDonnees.Size = new System.Drawing.Size(190, 60);
@@ -249,7 +254,7 @@ namespace myWay.myForms
             this.btnDonnees.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDonnees.IconColor = System.Drawing.Color.Black;
             this.btnDonnees.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDonnees.Location = new System.Drawing.Point(0, 44);
+            this.btnDonnees.Location = new System.Drawing.Point(0, 104);
             this.btnDonnees.Name = "btnDonnees";
             this.btnDonnees.Size = new System.Drawing.Size(190, 44);
             this.btnDonnees.TabIndex = 22;
@@ -302,6 +307,61 @@ namespace myWay.myForms
             this.pnlFrame.Size = new System.Drawing.Size(424, 227);
             this.pnlFrame.TabIndex = 26;
             // 
+            // pnlGeneral
+            // 
+            this.pnlGeneral.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(146)))), ((int)(((byte)(242)))));
+            this.pnlGeneral.Controls.Add(this.btnGeneralProfile);
+            this.pnlGeneral.Controls.Add(this.btnGeneralAffichage);
+            this.pnlGeneral.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlGeneral.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.pnlGeneral.Location = new System.Drawing.Point(0, 44);
+            this.pnlGeneral.Name = "pnlGeneral";
+            this.pnlGeneral.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.pnlGeneral.Size = new System.Drawing.Size(190, 60);
+            this.pnlGeneral.TabIndex = 28;
+            this.pnlGeneral.Visible = false;
+            // 
+            // btnGeneralProfile
+            // 
+            this.btnGeneralProfile.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnGeneralProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGeneralProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGeneralProfile.FlatAppearance.BorderSize = 0;
+            this.btnGeneralProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
+            this.btnGeneralProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeneralProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnGeneralProfile.ForeColor = System.Drawing.Color.White;
+            this.btnGeneralProfile.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGeneralProfile.IconColor = System.Drawing.Color.Black;
+            this.btnGeneralProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGeneralProfile.Location = new System.Drawing.Point(20, 30);
+            this.btnGeneralProfile.Name = "btnGeneralProfile";
+            this.btnGeneralProfile.Size = new System.Drawing.Size(170, 30);
+            this.btnGeneralProfile.TabIndex = 25;
+            this.btnGeneralProfile.Text = "profil";
+            this.btnGeneralProfile.UseVisualStyleBackColor = false;
+            // 
+            // btnGeneralAffichage
+            // 
+            this.btnGeneralAffichage.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnGeneralAffichage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGeneralAffichage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGeneralAffichage.FlatAppearance.BorderSize = 0;
+            this.btnGeneralAffichage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
+            this.btnGeneralAffichage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeneralAffichage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnGeneralAffichage.ForeColor = System.Drawing.Color.White;
+            this.btnGeneralAffichage.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGeneralAffichage.IconColor = System.Drawing.Color.Black;
+            this.btnGeneralAffichage.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGeneralAffichage.Location = new System.Drawing.Point(20, 0);
+            this.btnGeneralAffichage.Name = "btnGeneralAffichage";
+            this.btnGeneralAffichage.Size = new System.Drawing.Size(170, 30);
+            this.btnGeneralAffichage.TabIndex = 24;
+            this.btnGeneralAffichage.Text = "affichage";
+            this.btnGeneralAffichage.UseVisualStyleBackColor = false;
+            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +385,7 @@ namespace myWay.myForms
             this.pnlSettingsCategorie.ResumeLayout(false);
             this.pnlDonnees.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
+            this.pnlGeneral.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -348,5 +409,8 @@ namespace myWay.myForms
         private System.Windows.Forms.Panel pnlDonnees;
         private FontAwesome.Sharp.IconButton btnDonneesExport;
         private FontAwesome.Sharp.IconButton btnDonneesImport;
+        private System.Windows.Forms.Panel pnlGeneral;
+        private FontAwesome.Sharp.IconButton btnGeneralProfile;
+        private FontAwesome.Sharp.IconButton btnGeneralAffichage;
     }
 }

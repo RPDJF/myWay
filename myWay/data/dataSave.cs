@@ -44,6 +44,31 @@ namespace myWay.data
             }
         }
         // END - Save sections and their shortcuts
+        public void exportData(String path)
+        {
+            initializeDirectories(); // create directory if don't exist
+            using (XmlWriter writer = XmlWriter.Create(path))
+            {
+                writer.WriteStartElement("Sections");
+                foreach (ucSections section in dataSections.GetSections())
+                {
+                    writer.WriteStartElement("section");
+                    writer.WriteElementString("name", section.getName());
+                    foreach (raccourcis raccourci in section.getRaccourcis())
+                    {
+                        writer.WriteStartElement("raccourci");
+                        writer.WriteElementString("name", raccourci.getName());
+                        writer.WriteElementString("description", raccourci.getDescription());
+                        writer.WriteElementString("path", raccourci.getPath());
+                        writer.WriteEndElement();
+                    }
+                    writer.WriteEndElement();
+                }
+                writer.WriteEndElement();
+                writer.Flush();
+            }
+        }
+        // END - Save sections and their shortcuts
         // Import sections and their shortcuts
         public void importData()
         {
@@ -76,6 +101,18 @@ namespace myWay.data
             initializeDirectories();
             try
             {
+                foreach (XElement sections in XElement.Load(filePath).Elements("section"))
+                {
+                    ucSections mySection = new ucSections(sections.Element("name").Value);
+                    if (dataSections.sectionExists(mySection))
+                    {
+                        var alert = MessageBox.Show("La section \""+ mySection.getName() +"\" existe déjà.\nLe programme n'est pas prévu pour avoir des noms de sections identiques.\n\nVoulez-vous tout de même continuer ?", "Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if(alert.ToString() == "No")
+                        {
+                            return;
+                        }
+                    }
+                }
                 foreach (XElement sections in XElement.Load(filePath).Elements("section"))
                 {
                     ucSections mySection = new ucSections(sections.Element("name").Value);

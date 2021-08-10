@@ -20,11 +20,18 @@ namespace myWay.myForms.frmSettingsChilds
             foreach(myComponents.ucSections section in data.dataSections.GetSections())
             {
                 cbxSections.Items.Add(section.getName());
+                lblNew.Text = "v" + Application.ProductVersion + " et antérieur";
             }
         }
 
         private void btnChooseFile_Click(object sender, EventArgs e)
         {
+            ofd.ShowDialog();
+        }
+
+        private void ofd_FileOk(object sender, CancelEventArgs e)
+        {
+            dataSave saver = new dataSave();
             if (cbxSections.SelectedItem == null)
             {
                 myComponents.ucSections mySection = dataSections.GetSectionByName(cbxSections.Text);
@@ -34,17 +41,14 @@ namespace myWay.myForms.frmSettingsChilds
                     if (check.validateSectionName(cbxSections.Text))
                     {
                         dataSections.addSection(cbxSections.Text);
-                        dataSave saver = new dataSave();
                         saver.saveSections();
+                    }
+                    else
+                    {
+                        return;
                     }
                 }
             }
-            ofd.ShowDialog();
-        }
-
-        private void ofd_FileOk(object sender, CancelEventArgs e)
-        {
-            dataSave saver = new dataSave();
             saver.importOldData(ofd.FileName, dataSections.GetSectionByName(cbxSections.Text));
         }
 

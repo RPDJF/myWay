@@ -56,5 +56,11 @@ namespace myWay.data
             }
             return null;
         }
+        // END - Get section by name
+        // Clear Sections
+        public static void ClearSection()
+        {
+            listSections.Clear();
+        }
     }
 }

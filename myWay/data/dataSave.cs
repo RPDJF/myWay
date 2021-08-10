@@ -16,14 +16,13 @@ namespace myWay.data
     public class dataSave
     {
         // var
-        private String savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\myWay\profiles\";
+        public String savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\myWay\profiles\";
         private String settingsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\myWay\settings.xml";
-        private const String saveFilename = "default_profil.xml";
         // Save sections and their shortcuts
         public void saveSections()
         {
             initializeDirectories(); // create directory if don't exist
-            using (XmlWriter writer = XmlWriter.Create(savePath + saveFilename))
+            using (XmlWriter writer = XmlWriter.Create(savePath + dataTemp.profilName))
             {
                 writer.WriteStartElement("Sections");
                 foreach(ucSections section in dataSections.GetSections())
@@ -76,7 +75,27 @@ namespace myWay.data
             initializeDirectories();
             try
             {
-                foreach (XElement sections in XElement.Load(savePath + saveFilename).Elements("section"))
+                try
+                {
+                    foreach (XElement setting in XElement.Load(settingsPath).Elements())
+                    {
+                        foreach (XElement categorie in setting.Elements("display"))
+                        {
+                            dataTemp.alwaysOnTop = Convert.ToBoolean(categorie.Element("alwaysontop").Value);
+                            dataTemp.classicalWindowsForm = Convert.ToBoolean(categorie.Element("classicalwindowsform").Value);
+                        }
+                        foreach (XElement categorie in setting.Elements("profil"))
+                        {
+                            dataTemp.profilName = categorie.Element("selectedprofil").Value;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    saveSettings();
+                    Console.WriteLine(ex);
+                }
+                foreach (XElement sections in XElement.Load(savePath + dataTemp.profilName).Elements("section"))
                 {
                     ucSections mySection = new ucSections(sections.Element("name").Value);
                     dataSections.addSection(mySection);
@@ -85,27 +104,11 @@ namespace myWay.data
                         mySection.addShortcut(raccourcis.Element("name").Value, raccourcis.Element("path").Value, raccourcis.Element("description").Value);
                     }
                 }
-                try
-                {
-                    foreach (XElement setting in XElement.Load(settingsPath).Elements())
-                    {
-                        foreach (XElement categorie in setting.Elements())
-                        {
-                            dataTemp.alwaysOnTop = Convert.ToBoolean(categorie.Element("alwaysontop").Value);
-                            dataTemp.classicalWindowsForm = Convert.ToBoolean(categorie.Element("classicalwindowsform").Value);
-                        }
-                    }
-                }
-                catch(Exception ex)
-                {
-                    saveSettings();
-                    Console.WriteLine(ex);
-                }
             }
             catch
             {
                 MessageBox.Show("Bienvenue sur myWay !", "Bienvenue", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                using (XmlWriter writer = XmlWriter.Create(savePath + saveFilename))
+                using (XmlWriter writer = XmlWriter.Create(savePath + "default_profil.xml"))
                 {
                     writer.WriteStartElement("Sections");
                     writer.WriteEndElement();
@@ -193,11 +196,20 @@ namespace myWay.data
                 writer.WriteElementString("alwaysontop", dataTemp.alwaysOnTop.ToString());
                 writer.WriteElementString("classicalwindowsform", dataTemp.classicalWindowsForm.ToString());
                 writer.WriteEndElement();
+                writer.WriteStartElement("profil");
+                writer.WriteElementString("selectedprofil", dataTemp.profilName);
                 writer.WriteEndElement();
                 writer.WriteEndElement();
             }
         }
         // END - Save Settings
+        // Clear Data
+        public void ClearData()
+        {
+            dataSections.ClearSection();
+            dataTemp.selectedSection = null;
+        }
+        // END - Clear Data
         // Initialize directories
         public void initializeDirectories()
         {

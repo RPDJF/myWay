@@ -84,6 +84,16 @@ namespace myWay.myForms
             pnlFrame.Controls.Add(child);
             child.Show();
         }
+
+        private void btnGeneralProfile_Click(object sender, EventArgs e)
+        {
+            child.Close();
+            child = new frmSettingsChilds.GeneralProfil();
+            child.TopLevel = false;
+            pnlFrame.Controls.Clear();
+            pnlFrame.Controls.Add(child);
+            child.Show();
+        }
         // END - Controls events
     }
 }

@@ -69,7 +69,7 @@ namespace myWay.myForms
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             dataChecker check = new dataChecker();
-            if(check.validateSectionName(tbxInput.Text))
+            if(check.validateSectionName(tbxInput.Text) || (inputType == "profil"))
             {
                 dataSave saver = new dataSave();
                 switch (inputType)
@@ -83,6 +83,15 @@ namespace myWay.myForms
                     case "edit":
                         inputSection.setName(tbxInput.Text);
                         saver.saveSections();
+                        break;
+                    case "profil":
+                        if (check.validateProfilName(tbxInput.Text))
+                        {
+                            saver.ClearData();
+                            dataTemp.profilName = tbxInput.Text + ".xml";
+                            saver.saveSections();
+                            saver.saveSettings();
+                        }
                         break;
                 }
                 this.Close();

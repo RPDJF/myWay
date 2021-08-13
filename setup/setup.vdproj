@@ -16,19 +16,31 @@
         "Entry"
         {
         "MsmKey" = "8:_064BB410879AB16E07A36979063A8909"
-        "OwnerKey" = "8:_6B6B80E1D8A14817AE3F84F960457563"
+        "OwnerKey" = "8:_3B811CDAF84D41FFAD78972EB0978407"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_13011B3559484E76BFBE9DE05A8A845F"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_2C7618EE5D896FB10F03A3D4E6E8BD90"
-        "OwnerKey" = "8:_6B6B80E1D8A14817AE3F84F960457563"
+        "OwnerKey" = "8:_3B811CDAF84D41FFAD78972EB0978407"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_2D794E065DC8423D44E856C8B125C1E0"
-        "OwnerKey" = "8:_6B6B80E1D8A14817AE3F84F960457563"
+        "OwnerKey" = "8:_3B811CDAF84D41FFAD78972EB0978407"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3B811CDAF84D41FFAD78972EB0978407"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,37 +58,25 @@
         "Entry"
         {
         "MsmKey" = "8:_3CECB0CC526BA9EF7DF182150E6CB1D8"
-        "OwnerKey" = "8:_6B6B80E1D8A14817AE3F84F960457563"
+        "OwnerKey" = "8:_3B811CDAF84D41FFAD78972EB0978407"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_561AD0E1099B88293E090ABF87582E8E"
-        "OwnerKey" = "8:_6B6B80E1D8A14817AE3F84F960457563"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6B6B80E1D8A14817AE3F84F960457563"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DC564A8BBD7C4F39AB49C6FFDEFFFD37"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3B811CDAF84D41FFAD78972EB0978407"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_E7879A225EE9849BE6D85F7AD542BC07"
-        "OwnerKey" = "8:_6B6B80E1D8A14817AE3F84F960457563"
+        "OwnerKey" = "8:_3B811CDAF84D41FFAD78972EB0978407"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6B6B80E1D8A14817AE3F84F960457563"
+        "OwnerKey" = "8:_3B811CDAF84D41FFAD78972EB0978407"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -140,6 +140,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -164,6 +172,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -223,6 +239,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_13011B3559484E76BFBE9DE05A8A845F"
+            {
+            "SourcePath" = "8:..\\myWay\\myWay.ico"
+            "TargetName" = "8:myWay.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_5F026BAF5E3F4A61A990B944A21D93F2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2C7618EE5D896FB10F03A3D4E6E8BD90"
@@ -349,26 +385,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DC564A8BBD7C4F39AB49C6FFDEFFFD37"
-            {
-            "SourcePath" = "8:..\\..\\..\\Downloads\\myWay.ico"
-            "TargetName" = "8:myWay.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_5F026BAF5E3F4A61A990B944A21D93F2"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E7879A225EE9849BE6D85F7AD542BC07"
             {
             "AssemblyRegister" = "3:1"
@@ -467,25 +483,25 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:myWay"
-        "ProductCode" = "8:{92ABE198-F974-46F2-939B-9FF23D786502}"
-        "PackageCode" = "8:{531ED1EB-383E-464E-8E49-145CFD546414}"
+        "ProductCode" = "8:{3DDC4F4E-ACED-4C36-B98C-034B5CF73C70}"
+        "PackageCode" = "8:{6F552092-6833-408A-90A3-16689BA0CFFF}"
         "UpgradeCode" = "8:{1CC86A1A-F65F-43BB-8F19-83112CBB3CF8}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:0.2.0"
         "Manufacturer" = "8:Ruinformatique"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://ruinformatique.ch"
-        "Title" = "8:myWay-0.2.0_setup"
+        "Title" = "8:setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Rui Paulo De Jesus Ferreira"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Installateur de myWay"
         "ARPURLINFOABOUT" = "8:https://ruinformatique.ch"
-        "ARPPRODUCTICON" = "8:_DC564A8BBD7C4F39AB49C6FFDEFFFD37"
+        "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -588,7 +604,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A734ECA9C47A4F89934EC6731F291C11"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_80A36DEA6D3947A49C3DC92FD195C30E"
             {
             "Name" = "8:myWay"
             "Arguments" = "8:"
@@ -596,13 +612,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_6B6B80E1D8A14817AE3F84F960457563"
+            "Target" = "8:_3B811CDAF84D41FFAD78972EB0978407"
             "Folder" = "8:_45E605D94E2942A6A384D9FC8CC25755"
             "WorkingFolder" = "8:_8F3FA4137A91417C8B51390A0485BEC1"
-            "Icon" = "8:_DC564A8BBD7C4F39AB49C6FFDEFFFD37"
+            "Icon" = "8:_13011B3559484E76BFBE9DE05A8A845F"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B3CD2497A02D49F9AC11C8115D3D06B7"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8A3EF767B4684933938FBEBE76F0A91F"
             {
             "Name" = "8:myWay"
             "Arguments" = "8:"
@@ -610,10 +626,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_6B6B80E1D8A14817AE3F84F960457563"
+            "Target" = "8:_3B811CDAF84D41FFAD78972EB0978407"
             "Folder" = "8:_64E19F7974BB4D75854BEBD951D75D75"
             "WorkingFolder" = "8:_8F3FA4137A91417C8B51390A0485BEC1"
-            "Icon" = "8:_DC564A8BBD7C4F39AB49C6FFDEFFFD37"
+            "Icon" = "8:_13011B3559484E76BFBE9DE05A8A845F"
             "Feature" = "8:"
             }
         }
@@ -1015,7 +1031,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6B6B80E1D8A14817AE3F84F960457563"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3B811CDAF84D41FFAD78972EB0978407"
             {
             "SourcePath" = "8:..\\myWay\\obj\\Release\\myWay.exe"
             "TargetName" = "8:"

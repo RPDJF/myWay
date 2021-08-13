@@ -147,7 +147,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\setup.msi"
+        "OutputFilename" = "8:Release\\myWay-0.2.0_setup.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -1017,7 +1017,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6B6B80E1D8A14817AE3F84F960457563"
             {
-            "SourcePath" = "8:..\\myWay\\obj\\Debug\\myWay.exe"
+            "SourcePath" = "8:..\\myWay\\obj\\Release\\myWay.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8F3FA4137A91417C8B51390A0485BEC1"

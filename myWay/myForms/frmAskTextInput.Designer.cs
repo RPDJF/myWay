@@ -249,6 +249,7 @@ namespace myWay.myForms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAskTextInput";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmAskTextInput_Load);
             this.pnlAppTopBar.ResumeLayout(false);
             this.pnlAppTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

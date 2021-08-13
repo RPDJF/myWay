@@ -54,5 +54,14 @@ namespace myWay.myForms.frmSettingsChilds
             saver.importData();
             
         }
+
+        private void btnRemoveProfile_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Voulez-vous vraiment supprimer le profil \"" + cbxProfil.SelectedItem.ToString() + "\" ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            data.dataSave saver = new data.dataSave();
+            saver.DeleteProfile(cbxProfil.SelectedItem.ToString());
+            cbxProfil.Items.Add("default_profil.xml");
+            cbxProfil.SelectedItem = "default_profil.xml";
+        }
     }
 }

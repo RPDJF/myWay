@@ -79,7 +79,6 @@ namespace myWay.myForms
                         saver.saveSections();
                         dataTemp.selectedSection = mySection;
                         break;
-
                     case "edit":
                         inputSection.setName(tbxInput.Text);
                         saver.saveSections();
@@ -116,6 +115,14 @@ namespace myWay.myForms
             if (e.KeyCode == Keys.Enter)
             {
                 btnConfirm_Click(sender, e);
+            }
+        }
+
+        private void frmAskTextInput_Load(object sender, EventArgs e)
+        {
+            if(inputType == "profil")
+            {
+                lblTitle.Text = "Nommer le profil";
             }
         }
         // END - Control events

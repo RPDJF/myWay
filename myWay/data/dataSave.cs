@@ -108,13 +108,16 @@ namespace myWay.data
             catch
             {
                 MessageBox.Show("Bienvenue sur myWay !", "Bienvenue", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                using (XmlWriter writer = XmlWriter.Create(savePath + "default_profil.xml"))
+                if(!File.Exists(savePath + "default_profil.xml"))
                 {
-                    writer.WriteStartElement("Sections");
-                    writer.WriteEndElement();
-                    writer.Flush();
+                    using (XmlWriter writer = XmlWriter.Create(savePath + "default_profil.xml"))
+                    {
+                        writer.WriteStartElement("Sections");
+                        writer.WriteEndElement();
+                        writer.Flush();
+                    }
+                    saveSettings();
                 }
-                saveSettings();
             }
         }
         public void importData(String filePath)
@@ -219,5 +222,21 @@ namespace myWay.data
             }
         }
         // END - Initialize directories
+        // Delete profile
+        public void DeleteProfile(String Profile)
+        {
+            try
+            {
+                ClearData();
+                File.Delete(savePath + Profile);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Le profil n'existe pas", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dataTemp.profilName = "default_profil.xml";
+            }
+        }
+        // END - Delete profile
     }
 }

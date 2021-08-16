@@ -92,6 +92,7 @@ namespace myWay.myForms
             this.lblAppName.TabIndex = 0;
             this.lblAppName.Text = "myWay";
             this.lblAppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAppName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblAppName_MouseMove);
             // 
             // btnClose
             // 
@@ -195,6 +196,7 @@ namespace myWay.myForms
             this.pnlAppTopBar.Name = "pnlAppTopBar";
             this.pnlAppTopBar.Size = new System.Drawing.Size(460, 28);
             this.pnlAppTopBar.TabIndex = 14;
+            this.pnlAppTopBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlAppTopBar_MouseMove);
             // 
             // frmAbout
             // 

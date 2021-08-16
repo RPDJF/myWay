@@ -32,31 +32,31 @@ namespace myWay.myForms
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.lblAppName = new System.Windows.Forms.Label();
             this.pnlAppTopBar = new System.Windows.Forms.Panel();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
             this.pnlTopBar = new System.Windows.Forms.Panel();
+            this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.pnlTopSettings = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.pnlSettingsCategorie = new System.Windows.Forms.Panel();
             this.pnlDonnees = new System.Windows.Forms.Panel();
-            this.pnlGeneral = new System.Windows.Forms.Panel();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.pnlFrame = new System.Windows.Forms.Panel();
             this.btnDonneesExport = new FontAwesome.Sharp.IconButton();
             this.btnDonneesImport = new FontAwesome.Sharp.IconButton();
             this.btnDonnees = new FontAwesome.Sharp.IconButton();
+            this.pnlGeneral = new System.Windows.Forms.Panel();
             this.btnGeneralProfile = new FontAwesome.Sharp.IconButton();
             this.btnGeneralAffichage = new FontAwesome.Sharp.IconButton();
             this.btnGeneral = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.btnCancel = new FontAwesome.Sharp.IconButton();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.pnlFrame = new System.Windows.Forms.Panel();
             this.pnlAppTopBar.SuspendLayout();
             this.pnlTopBar.SuspendLayout();
             this.pnlTopSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.pnlSettingsCategorie.SuspendLayout();
             this.pnlDonnees.SuspendLayout();
             this.pnlGeneral.SuspendLayout();
             this.pnlContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ofd
@@ -74,6 +74,7 @@ namespace myWay.myForms
             this.lblAppName.TabIndex = 0;
             this.lblAppName.Text = "myWay";
             this.lblAppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAppName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblAppName_MouseMove);
             // 
             // pnlAppTopBar
             // 
@@ -85,6 +86,26 @@ namespace myWay.myForms
             this.pnlAppTopBar.Name = "pnlAppTopBar";
             this.pnlAppTopBar.Size = new System.Drawing.Size(614, 28);
             this.pnlAppTopBar.TabIndex = 14;
+            this.pnlAppTopBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlAppTopBar_MouseMove);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnClose.IconColor = System.Drawing.Color.Snow;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 20;
+            this.btnClose.Location = new System.Drawing.Point(577, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnClose.Size = new System.Drawing.Size(37, 28);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pnlTopBar
             // 
@@ -95,6 +116,25 @@ namespace myWay.myForms
             this.pnlTopBar.Name = "pnlTopBar";
             this.pnlTopBar.Size = new System.Drawing.Size(614, 39);
             this.pnlTopBar.TabIndex = 16;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCancel.IconColor = System.Drawing.Color.Black;
+            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancel.Location = new System.Drawing.Point(531, 7);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 25);
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Text = "Fermer";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pnlTopSettings
             // 
@@ -118,6 +158,19 @@ namespace myWay.myForms
             this.lblTitle.TabIndex = 13;
             this.lblTitle.Text = "Paramètres";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.SlateBlue;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Cogs;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 31;
+            this.iconPictureBox1.Location = new System.Drawing.Point(13, 17);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(31, 32);
+            this.iconPictureBox1.TabIndex = 15;
+            this.iconPictureBox1.TabStop = false;
             // 
             // pnlSettingsCategorie
             // 
@@ -147,45 +200,6 @@ namespace myWay.myForms
             this.pnlDonnees.Size = new System.Drawing.Size(190, 60);
             this.pnlDonnees.TabIndex = 27;
             this.pnlDonnees.Visible = false;
-            // 
-            // pnlGeneral
-            // 
-            this.pnlGeneral.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(146)))), ((int)(((byte)(242)))));
-            this.pnlGeneral.Controls.Add(this.btnGeneralProfile);
-            this.pnlGeneral.Controls.Add(this.btnGeneralAffichage);
-            this.pnlGeneral.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlGeneral.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.pnlGeneral.Location = new System.Drawing.Point(0, 44);
-            this.pnlGeneral.Name = "pnlGeneral";
-            this.pnlGeneral.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.pnlGeneral.Size = new System.Drawing.Size(190, 60);
-            this.pnlGeneral.TabIndex = 28;
-            this.pnlGeneral.Visible = false;
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pnlContent.Controls.Add(this.pnlFrame);
-            this.pnlContent.Controls.Add(this.pnlSettingsCategorie);
-            this.pnlContent.Controls.Add(this.pnlTopSettings);
-            this.pnlContent.Controls.Add(this.pnlTopBar);
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.pnlContent.Location = new System.Drawing.Point(2, 30);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(614, 324);
-            this.pnlContent.TabIndex = 15;
-            // 
-            // pnlFrame
-            // 
-            this.pnlFrame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pnlFrame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFrame.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.pnlFrame.Location = new System.Drawing.Point(190, 58);
-            this.pnlFrame.Name = "pnlFrame";
-            this.pnlFrame.Size = new System.Drawing.Size(424, 227);
-            this.pnlFrame.TabIndex = 26;
             // 
             // btnDonneesExport
             // 
@@ -250,6 +264,21 @@ namespace myWay.myForms
             this.btnDonnees.UseVisualStyleBackColor = false;
             this.btnDonnees.Click += new System.EventHandler(this.btnDonnees_Click);
             // 
+            // pnlGeneral
+            // 
+            this.pnlGeneral.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(146)))), ((int)(((byte)(242)))));
+            this.pnlGeneral.Controls.Add(this.btnGeneralProfile);
+            this.pnlGeneral.Controls.Add(this.btnGeneralAffichage);
+            this.pnlGeneral.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlGeneral.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.pnlGeneral.Location = new System.Drawing.Point(0, 44);
+            this.pnlGeneral.Name = "pnlGeneral";
+            this.pnlGeneral.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.pnlGeneral.Size = new System.Drawing.Size(190, 60);
+            this.pnlGeneral.TabIndex = 28;
+            this.pnlGeneral.Visible = false;
+            // 
             // btnGeneralProfile
             // 
             this.btnGeneralProfile.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -313,56 +342,29 @@ namespace myWay.myForms
             this.btnGeneral.UseVisualStyleBackColor = false;
             this.btnGeneral.Click += new System.EventHandler(this.btnGeneral_Click);
             // 
-            // iconPictureBox1
+            // pnlContent
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.SlateBlue;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Cogs;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 31;
-            this.iconPictureBox1.Location = new System.Drawing.Point(13, 17);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(31, 32);
-            this.iconPictureBox1.TabIndex = 15;
-            this.iconPictureBox1.TabStop = false;
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlContent.Controls.Add(this.pnlFrame);
+            this.pnlContent.Controls.Add(this.pnlSettingsCategorie);
+            this.pnlContent.Controls.Add(this.pnlTopSettings);
+            this.pnlContent.Controls.Add(this.pnlTopBar);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.pnlContent.Location = new System.Drawing.Point(2, 30);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(614, 324);
+            this.pnlContent.TabIndex = 15;
             // 
-            // btnCancel
+            // pnlFrame
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnCancel.IconColor = System.Drawing.Color.Black;
-            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancel.Location = new System.Drawing.Point(531, 7);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 25);
-            this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "Fermer";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnClose.IconColor = System.Drawing.Color.Snow;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 20;
-            this.btnClose.Location = new System.Drawing.Point(577, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.btnClose.Size = new System.Drawing.Size(37, 28);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.pnlFrame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFrame.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.pnlFrame.Location = new System.Drawing.Point(190, 58);
+            this.pnlFrame.Name = "pnlFrame";
+            this.pnlFrame.Size = new System.Drawing.Size(424, 227);
+            this.pnlFrame.TabIndex = 26;
             // 
             // frmSettings
             // 
@@ -384,11 +386,11 @@ namespace myWay.myForms
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopSettings.ResumeLayout(false);
             this.pnlTopSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.pnlSettingsCategorie.ResumeLayout(false);
             this.pnlDonnees.ResumeLayout(false);
             this.pnlGeneral.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -16,20 +16,34 @@ Il est possible que dans les versions à venir l'application proposera une optio
  
 
 ## Current branch
+[ **Version 0.2.0 - 2021** ]
+Corrections et nouvelles fonctionnalités :
+ - Paramètres
+ 	- Always on top
+	- Export - import
+	- Profils
+ - UI
+ 	- Amélioration de l'UI
+ - Autre
+ 	- Correction du setup
+**Download link :** https://github.com/RPDJF/myWay/releases/download/0.2.0/myWay-0.2.0_setup.msi
+
+## Next updates
+[ **Version 1.0.0 - 2021** À venir ]
+Il s'agira de la première version officielle qui comprendra les fonctionnalités suivante :
+ - Séctions
+	 - Validation touche entrée
+- Projet
+	 - Optimisation du code (suppression de myClass.raccourcis au profit de myComponents.ucRaccourcis
+- Peut-être
+	 - Mise à jour automatiques
+- Support plein écran
+
+## Older versions
 [ **Version 0.1.0 - 2021** ]
 Version bêta test
 **Download link :** https://github.com/RPDJF/myWay/releases/download/0.1.0/setup.msi
 
-[ **Version 1.0.0 - 2021** À venir ]
-Il s'agira de la première version officielle qui comprendra les fonctionnalités suivante :
- - Séctions
-	 - Export - import
-	 - Validation touche entrée
-- Projet
-	 - Optimisation du code (suppression de myClass.raccourcis au profit de myComponents.ucRaccourcis
-- Support plein écran
-
 [ **Version 4.5 - 2020** ]
 Dernière version officielle de **myWay**, plus supportée.
-Il s'agit de l'ancienne application qui sera remplacé par ce projet.
-Disponible sur [ruinformatique.ch](https://ruinformatique.ch).
+Il s'agit de l'ancienne application qui remplacé par ce projet.
